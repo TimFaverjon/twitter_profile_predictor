@@ -1,1 +1,5 @@
-src/profile_predictor_twitter/data
+src/twitter_profile_predictor/data
+
+build
+
+dist
