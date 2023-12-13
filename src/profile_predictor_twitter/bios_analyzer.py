@@ -1,3 +1,7 @@
+###########################################
+# Loading the module
+###########################################
+
 ######################
 # Tokenize
 ######################
@@ -108,6 +112,10 @@ def load_statuses_keyword_dict() :
 map_ProKeywords_to_professions = load_professions_keyword_dict()
 map_StatKeywords_to_statuses = load_statuses_keyword_dict()
 
+
+###########################################
+# Module
+###########################################
 
 class bios_analyzer() :
     """
