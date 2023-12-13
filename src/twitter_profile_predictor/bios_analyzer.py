@@ -73,12 +73,17 @@ def process_biwords(x) :
 # 1. Loading keywords dicts
 ##############
 
+import pkg_resources
+
+# Assuming this code is in module_file.py
+data_path = pkg_resources.resource_filename(__name__, 'data/Keywords_professions_statuses.xlsx')
+
 def load_professions_keyword_dict() :
     """
     Load the .xslx file in the data, and create a dict where each professional keyword is mapped to a profession
     """
     # Load profession dataframe
-    df_map_word_professions = pd.read_excel('src/profile_predictor_twitter/data/df_words_classes_3.xlsx', sheet_name='Professions')
+    df_map_word_professions = pd.read_excel(data_path, sheet_name='Professions')
     
     # format the string to list
     df_map_word_professions['Keywords'] = df_map_word_professions['Keywords'].apply(listation)
@@ -96,7 +101,7 @@ def load_statuses_keyword_dict() :
     Load the .xslx file in the data, and create a dict where each status keyword is mapped to a status
     """
     # Load profession dataframe
-    df_map_word_status = pd.read_excel('src/profile_predictor_twitter/data/df_words_classes_3.xlsx', sheet_name='Titres')
+    df_map_word_status = pd.read_excel(data_path, sheet_name='Titres')
 
     # format the string to lists
     df_map_word_status['Keywords'] = df_map_word_status['Keywords'].apply(listation)

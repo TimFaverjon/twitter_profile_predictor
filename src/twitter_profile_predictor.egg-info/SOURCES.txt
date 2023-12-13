@@ -1,10 +1,11 @@
 README.md
 setup.py
-src/profile_predictor_twitter/__init__.py
-src/profile_predictor_twitter/bios_analyzer.py
-src/profile_predictor_twitter/data/df_words_classes_3.xlsx
+src/twitter_profile_predictor/__init__.py
+src/twitter_profile_predictor/bios_analyzer.py
 src/twitter_profile_predictor.egg-info/PKG-INFO
 src/twitter_profile_predictor.egg-info/SOURCES.txt
 src/twitter_profile_predictor.egg-info/dependency_links.txt
 src/twitter_profile_predictor.egg-info/requires.txt
 src/twitter_profile_predictor.egg-info/top_level.txt
+src/twitter_profile_predictor/data/Keywords_professions_statuses.xlsx
+test/test_code.py

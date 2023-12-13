@@ -1,1 +1,1 @@
-profile_predictor_twitter
+twitter_profile_predictor
