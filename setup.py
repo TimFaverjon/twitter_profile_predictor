@@ -1,28 +1,28 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='my-package',
+    name='twitter-profile-predictor',
     version='0.1.0',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     include_package_data=True,
     install_requires=[
-        'nltk==3.6.3',
-        'pandas==1.3.3',
-        'openpyxl==3.0.14',
+        'nltk==3.7',
+        'pandas==1.5.3',
+        'asttokens==2.0.5'
         # Add other dependencies as needed see in the original conda environment wich version are used !!!!
     ],
     entry_points={
         'console_scripts': [
-            'my_script = my_package.module1:main',
+            'my_script = src.profile_predictor_twitter.bios_analyzer',
         ],
     },
-    author='Your Name',
-    author_email='your.email@example.com',
-    description='Description of your package',
+    author='Tim Faverjon',
+    author_email='tim.faverjon@sciencespo.fr',
+    description='A python module that extract information (language, profession...) from X[ex-Twitter] profile bios',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/yourusername/my-package',
+    url='https://github.com/TimFaverjon/twitter_profile_predictor',
     license='MIT',
     classifiers=[
         'Development Status :: 3 - Alpha',
