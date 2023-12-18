@@ -3,3 +3,5 @@ src/twitter_profile_predictor/data
 build
 
 dist
+
+packaging_steps_tutorial.md
