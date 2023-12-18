@@ -2,15 +2,15 @@ from setuptools import setup, find_packages
 
 setup(
     name='twitter_profile_predictor',
-    version='0.1.1',
+    version='0.1.2',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     include_package_data=True,
     install_requires=[
-        'nltk==3.7',
-        'pandas==2.1.4',
-        'asttokens==2.0.5',
-        'openpyxl==3.0.10'
+        'nltk>=3.7',
+        'pandas>=2.1.4',
+        'asttokens>=2.0.5',
+        'openpyxl>=3.0.10'
         # Add other dependencies as needed see in the original conda environment wich version are used !!!!
     ],
     author='Tim Faverjon',

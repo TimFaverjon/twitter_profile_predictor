@@ -1,2 +1,2 @@
 
-import bios_analyzer
+from .bios_analyzer import bios_analyzer
