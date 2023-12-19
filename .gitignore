@@ -1,6 +1,7 @@
 src/twitter_profile_predictor/data
 
 build
+!/docs/build/
 
 dist
 
