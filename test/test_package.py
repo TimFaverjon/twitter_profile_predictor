@@ -1,15 +1,10 @@
-print("loading the module")
+print("importing the module")
 
-import sys
-sys.path.append('/sps/humanum/user/tfaverjo/twitter_profile_predictor/src/twitter_profile_predictor')
-
-import bios_analyzer as tba
-
-example_bios_1 = "je suis president du monde et journaliste chez sciencespo"
+import twitter_profile_predictor
 
 print('starting class')
 
-extractor = tba.bios_analyzer(example_bios_1)
+extractor = twitter_profile_predictor.bios_analyzer("je suis president du monde et journaliste chez sciencespo")
 
 print('tokenization')
 

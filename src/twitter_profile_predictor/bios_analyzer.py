@@ -3,6 +3,65 @@
 ###########################################
 
 ######################
+# Language recognition
+######################
+
+import nltk
+from cld2 import detect
+from langdetect import detect, DetectorFactory
+DetectorFactory.seed = 0
+import langid
+
+# Define language recognition models
+def detlang(text):
+    try :
+        return(detect(text))
+    except :
+        return(0)
+
+def detlang_id(text):
+    try :
+        return(langid.classify(text)[0])
+    except :
+        return(0)
+
+def detlang_cld(text):
+    try :
+        results = detect(text)
+        if results.is_reliable :
+            # Extract language code
+            return(results.details[0].language_code)
+        else :
+            return(0)
+    except :
+        return(0)
+    
+def lang(text, mainfrench = True):
+    """Use 3 different language models to indentify language of text by majority vote 
+    (return False if no unique language is found).
+
+    Args:
+        text (str): string that we need to identify
+        mainfrench (bool): true if the expected language is french.
+    """
+    langdet = detlang(text)
+    langid = detlang_id(text)
+    langcld = detlang_cld(text)
+
+    if mainfrench :
+        if langdet=='fr' or langid=='fr' or langcld=='fr' :
+            return('fr') #    WARNING : favor french beacause of prior of Twitter corpus
+    
+    if langdet == langid :
+        return(langdet)
+    elif langdet==langcld :
+        return(langdet)
+    elif langid == langcld :
+        return(langid)
+    else :
+        return(False)
+    
+######################
 # Tokenize
 ######################
 import nltk
@@ -201,3 +260,16 @@ class bios_analyzer() :
         self.statuses = list(set(self.statuses))
 
         return(self.statuses)
+
+    def get_lang(self, mainfrench = True) :
+        """Use 3 different language models to indentify language of the bios by majority vote 
+        (return False if no unique language is found).
+
+        Args:
+            mainfrench (bool, optional): If true it means that french is the expected language and hence only one model on 3 identifying french will be considered enough. Defaults to True.
+
+        Returns:
+            string: en, fr, sp... indicating the recognise language standard code
+        """
+        self.language = lang(self.bios, mainfrench)
+        return self.language

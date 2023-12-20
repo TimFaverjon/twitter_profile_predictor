@@ -9,3 +9,4 @@ src/twitter_profile_predictor.egg-info/requires.txt
 src/twitter_profile_predictor.egg-info/top_level.txt
 src/twitter_profile_predictor/data/Keywords_professions_statuses.xlsx
 test/test_code.py
+test/test_package.py
