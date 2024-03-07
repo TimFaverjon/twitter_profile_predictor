@@ -12,6 +12,8 @@ Predicted characteristics :
 - age
 - topics
 
+Detail documentation can be found [here](https://timfaverjon.github.io/twitter_profile_predictor/bios_analyzer.html).
+
 ### Methodology
 
 Language is identified using language models.
@@ -25,6 +27,8 @@ To install this package run the command:
 ```shell
 pip install --upgrade twitter-profile-predictor
 ```
+
+The package is uploaded on [PyPI](https://pypi.org/project/twitter-profile-predictor/).
 
 ### WARNING
 
@@ -50,7 +54,7 @@ print("profession extraction")
 print(extractor.get_professions())
 ```
 
-You can find a tutorial with examples [here](test/example_code.ipynb).
+You can find a [tutorial with examples](test/example_code.ipynb).
 
 # Documentation
 
