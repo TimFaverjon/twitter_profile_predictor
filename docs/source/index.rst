@@ -20,6 +20,17 @@ Modules
    :undoc-members:
    :show-inheritance:
 
+   .. autofunction:: get_pro_kewords
+   .. autofunction:: get_status_kewords
+   .. autofunction:: get_age_kewords
+   .. autofunction:: get_gender_kewords
+   .. autofunction:: get_topic_kewords
+
+.. automodule:: twitter_profile_predictor.df_bios_analyzer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Indices and tables
 ==================
 

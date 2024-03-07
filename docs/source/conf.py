@@ -11,13 +11,15 @@ print(f"Current working directory: {os.getcwd()}")
 sys.path.insert(0, os.path.abspath('../..'))
 print(f"Updated sys.path: {sys.path}")
 
+sys.path.insert(0, os.path.abspath('src/twitter_profile_predictor'))
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Twitter Profile Predictor'
 copyright = '2023, Tim Faverjon'
 author = 'Tim Faverjon'
-release = '0.1.3'
+release = '0.2.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
