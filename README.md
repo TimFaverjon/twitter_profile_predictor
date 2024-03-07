@@ -1,5 +1,9 @@
 # Twitter Profile Predictor
 
+WELCOME to Twitter profile predictor, a quick and easy way to estimate professions, statuses, topics and other features of Twitter users from their description in an auditable way. And suitable for FRENCH !
+
+For any question contact : tim.faverjon@sciencespo.fr.
+
 ## Description
 
 This package is designed to predict the characteristics of a Twitter profile based on bios.
@@ -18,7 +22,7 @@ Detailed documentation can be found [here](https://timfaverjon.github.io/twitter
 
 Language is identified using language models.
 
-All the other characteristics are estimated by identifying keywords and bi-words in the bios.
+All the other characteristics are estimated by identifying keywords and bi-words in the bios. The keywords have been choosen by human annotation among the most used words and bi-words in a sample of French Twitter users (see more detail in the documentation section). 
 
 ## Installation
 
