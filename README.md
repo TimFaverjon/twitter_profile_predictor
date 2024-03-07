@@ -12,7 +12,7 @@ Predicted characteristics :
 - age
 - topics
 
-Detail documentation can be found [here](https://timfaverjon.github.io/twitter_profile_predictor/bios_analyzer.html).
+Detailed documentation can be found [here](https://timfaverjon.github.io/twitter_profile_predictor/bios_analyzer.html).
 
 ### Methodology
 
@@ -57,6 +57,8 @@ print(extractor.get_professions())
 You can find a [tutorial with examples](test/example_code.ipynb).
 
 # Documentation
+
+ In this section we discuss the scientific methodology. Detailed and complete documentation of the functions and classes can be found [here](https://timfaverjon.github.io/twitter_profile_predictor/bios_analyzer.html).
 
 Our methodology is based on the analyisis of X (ex-Twitter) bios (also called description). Around 48% of all X users have a bios accessible on their profile[@culottaPredictingTwitterUser2016]. Our method have been developped on a specific subset of 30.000 users followers of french members of parliament. For this reason we recommended it for french datasets
 
