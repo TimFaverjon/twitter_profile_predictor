@@ -1,0 +1,3960 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>twitter_profile_predictor.bios_analyzer API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>twitter_profile_predictor.bios_analyzer</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">###########################################
+# Loading the module
+###########################################
+
+######################
+# Language recognition
+######################
+
+import nltk
+import cld2
+import langdetect
+langdetect.DetectorFactory.seed = 0
+import langid
+
+# Define language recognition models
+def detlang(text):
+    &#34;&#34;&#34;
+    Detect the language of the given text using the langdetect library.
+
+    Args:
+        text (str): The text to detect the language of.
+
+    Returns:
+        str: The detected language code.
+    &#34;&#34;&#34;
+    try:
+        return langdetect.detect(text)
+    except:
+        return 0
+
+def detlang_id(text):
+    &#34;&#34;&#34;
+    Detect the language of the given text using the langid library.
+
+    Args:
+        text (str): The text to detect the language of.
+
+    Returns:
+        str: The detected language code.
+    &#34;&#34;&#34;
+    try:
+        return langid.classify(text)[0]
+    except:
+        return 0
+
+def detlang_cld(text):
+    &#34;&#34;&#34;
+    Detect the language of the given text using the cld2 library.
+
+    Args:
+        text (str): The text to detect the language of.
+
+    Returns:
+        str: The detected language code.
+    &#34;&#34;&#34;
+    try:
+        results = cld2.detect(text)
+        if results.is_reliable:
+            # Extract language code
+            return results.details[0].language_code
+        else:
+            return 0
+    except:
+        return 0
+
+def lang(text, mainfrench=True):
+    &#34;&#34;&#34;
+    Use 3 different language models to identify the language of the text by majority vote.
+
+    Args:
+        text (str): The text to identify the language of.
+        mainfrench (bool): True if the expected language is French.
+
+    Returns:
+        str or bool: The detected language code or False if no unique language is found.
+    &#34;&#34;&#34;
+    langdet = detlang(text)
+    langid = detlang_id(text)
+    langcld = detlang_cld(text)
+
+    if mainfrench:
+        if langdet == &#39;fr&#39; or langid == &#39;fr&#39; or langcld == &#39;fr&#39;:
+            return &#39;fr&#39;  # WARNING: favor French because of prior of Twitter corpus
+
+    if langdet == langid:
+        return langdet
+    elif langdet == langcld:
+        return langdet
+    elif langid == langcld:
+        return langid
+    else:
+        return False
+
+######################
+# Tokenize
+######################
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+import string
+
+# 0 - downloading stopwords and punctuation
+nltk.download(&#39;punkt&#39;)
+nltk.download(&#39;stopwords&#39;)
+
+stopwords_en = stopwords.words(&#39;english&#39;)
+stopwords_fr = stopwords.words(&#39;french&#39;)
+
+######################
+# Identify keywords
+######################
+
+import pandas as pd
+from ast import literal_eval
+
+# 0. Helping functions
+##############
+
+def listation(literal):
+    &#34;&#34;&#34;
+    Convert a string representation of a list of words and bi-words into a list format.
+
+    Args:
+        literal (str): The string representing the list.
+
+    Returns:
+        list: The list of words and bi-words.
+    &#34;&#34;&#34;
+    listed = []
+    literal = literal.replace(&#39; &#39;, &#39;&#39;).split(&#39;,&#39;)
+    for k in range(len(literal)):
+        if literal[k][0] == &#39;(&#39;:
+            listed.append(literal_eval(literal[k] + &#34;,&#34; + literal[k + 1]))
+        elif literal[k][-1] != &#39;)&#39;:
+            listed.append(literal[k])
+    return listed
+
+def process_biwords(x):
+    &#34;&#34;&#34;
+    Transform tuple bi-words in x into string bi-words.
+
+    Args:
+        x (str, list): The element containing bi-words.
+
+    Returns:
+        str or list: The transformed bi-words.
+    &#34;&#34;&#34;
+    if type(x) == list:
+        for k in range(len(x)):
+            if type(x[k]) == tuple:
+                x[k] = x[k][0] + &#39; &#39; + x[k][1]
+            else:
+                x[k] = x[k]
+
+    elif type(x) == tuple:
+        x = x[0] + &#39; &#39; + x[1]
+
+    elif type(x) == str:
+        x = x
+
+    else:
+        x = False
+
+    return x
+
+# 1. Loading keywords dicts
+##############
+
+import pkg_resources
+
+# Assuming this code is in module_file.py
+data_path = pkg_resources.resource_filename(__name__, &#39;data/df_words_twitterUsersAnalysis.xlsx&#39;)
+
+def load_all_dicts():
+    &#34;&#34;&#34;
+    Load all the keyword dataframes and transform them into dictionaries.
+
+    Returns:
+        tuple: A tuple containing the dictionaries for each keyword category.
+    &#34;&#34;&#34;
+    # Load keyword dataframes (classes to keywords)
+    df_map_word_professions = pd.read_excel(data_path, sheet_name=&#39;Professions&#39;)
+
+    df_map_word_prostatus = pd.read_excel(data_path, sheet_name=&#39;Professional Statuses&#39;)
+    df_map_word_actorstatus = pd.read_excel(data_path, sheet_name=&#39;Actor Type Status&#39;)
+    df_map_word_groupstatus = pd.read_excel(data_path, sheet_name=&#39;Group Status&#39;)
+    df_map_word_universitystatus = pd.read_excel(data_path, sheet_name=&#39;University Status&#39;)
+    df_map_word_allstatus = pd.read_excel(data_path, sheet_name=&#39;Status&#39;)
+
+    df_map_word_age = pd.read_excel(data_path, sheet_name=&#39;Age&#39;)
+    df_map_word_gender = pd.read_excel(data_path, sheet_name=&#39;Genre&#39;)
+
+    df_map_word_topic = pd.read_excel(data_path, sheet_name=&#39;Topics&#39;)
+
+    # format list of keywords (str to list)
+    df_map_word_professions[&#39;Keywords&#39;] = df_map_word_professions[&#39;Keywords&#39;].apply(listation)
+
+    df_map_word_prostatus[&#39;Keywords&#39;] = df_map_word_prostatus[&#39;Keywords&#39;].apply(listation)
+    df_map_word_actorstatus[&#39;Keywords&#39;] = df_map_word_actorstatus[&#39;Keywords&#39;].apply(listation)
+    df_map_word_groupstatus[&#39;Keywords&#39;] = df_map_word_groupstatus[&#39;Keywords&#39;].apply(listation)
+    df_map_word_universitystatus[&#39;Keywords&#39;] = df_map_word_universitystatus[&#39;Keywords&#39;].apply(listation)
+    df_map_word_allstatus[&#39;Keywords&#39;] = df_map_word_allstatus[&#39;Keywords&#39;].apply(listation)
+
+    df_map_word_age[&#39;Keywords&#39;] = df_map_word_age[&#39;Keywords&#39;].apply(listation)
+    df_map_word_gender[&#39;Keywords&#39;] = df_map_word_gender[&#39;Keywords&#39;].apply(listation)
+
+    df_map_word_topic[&#39;Keywords&#39;] = df_map_word_topic[&#39;Keywords&#39;].apply(listation)
+
+    # transform the keywords dataframe to dictionaries (keywords to classes)
+    pro_key = {}
+    for k in range(len(df_map_word_professions)):
+        for key in df_map_word_professions[&#39;Keywords&#39;][k]:
+            pro_key[key] = df_map_word_professions[&#39;English&#39;][k]
+
+    prostatus_key = {}
+    for k in range(len(df_map_word_prostatus)):
+        for key in df_map_word_prostatus[&#39;Keywords&#39;][k]:
+            prostatus_key[key] = df_map_word_prostatus[&#39;English&#39;][k]
+
+    actorstatus_key = {}
+    for k in range(len(df_map_word_actorstatus)):
+        for key in df_map_word_actorstatus[&#39;Keywords&#39;][k]:
+            actorstatus_key[key] = df_map_word_actorstatus[&#39;English&#39;][k]
+
+    groupstatus_key = {}
+    for k in range(len(df_map_word_groupstatus)):
+        for key in df_map_word_groupstatus[&#39;Keywords&#39;][k]:
+            groupstatus_key[key] = df_map_word_groupstatus[&#39;English&#39;][k]
+
+    universitystatus_key = {}
+    for k in range(len(df_map_word_universitystatus)):
+        for key in df_map_word_universitystatus[&#39;Keywords&#39;][k]:
+            universitystatus_key[key] = df_map_word_universitystatus[&#39;English&#39;][k]
+
+    allstatus_key = {}
+    for k in range(len(df_map_word_allstatus)):
+        for key in df_map_word_allstatus[&#39;Keywords&#39;][k]:
+            allstatus_key[key] = df_map_word_allstatus[&#39;English&#39;][k]
+
+    age_key = {}
+    for k in range(len(df_map_word_age)):
+        for key in df_map_word_age[&#39;Keywords&#39;][k]:
+            age_key[key] = df_map_word_age[&#39;Age&#39;][k]
+
+    gender_key = {}
+    for k in range(len(df_map_word_gender)):
+        for key in df_map_word_gender[&#39;Keywords&#39;][k]:
+            gender_key[key] = df_map_word_gender[&#39;English&#39;][k]
+
+    topic_key = {}
+    for k in range(len(df_map_word_topic)):
+        for key in df_map_word_topic[&#39;Keywords&#39;][k]:
+            topic_key[key] = df_map_word_topic[&#39;English&#39;][k]
+
+    ## PCS groups
+    professions_to_PCSgroups = df_map_word_professions.set_index(&#39;English&#39;)[&#39;Group&#39;].to_dict()
+    # 2.2- Status
+    status_to_stutustype = df_map_word_allstatus.set_index(&#39;English&#39;)[&#39;Type&#39;].to_dict()
+
+    return (
+        pro_key,
+        prostatus_key,
+        actorstatus_key,
+        groupstatus_key,
+        universitystatus_key,
+        allstatus_key,
+        age_key,
+        gender_key,
+        topic_key,
+        professions_to_PCSgroups,
+        status_to_stutustype
+    )
+
+map_Keywords_to_professions, map_Keywords_to_prostatuses, map_Keywords_to_actorstatuses, map_Keywords_to_groupstatuses, map_Keywords_to_universitystatuses, map_Keywords_to_allstatuses, map_Keywords_to_ages, map_Keywords_to_gender, map_Keywords_to_topics, map_professions_to_PCSgroups, map_status_to_stutustype = load_all_dicts()
+
+
+###########################################
+# Module
+###########################################
+
+class bios_analyzer:
+    &#34;&#34;&#34;
+    A class processing a bios string, offering methods to analyze the string as a Twitter(X) bios.
+    &#34;&#34;&#34;
+
+    def __init__(self, bios=&#34;&#34;):
+        &#34;&#34;&#34;
+        Initialize the bios_analyzer object.
+
+        Args:
+            bios (str, optional): The bios string to analyze. Defaults to &#34;&#34;.
+        &#34;&#34;&#34;
+        self.bios = bios
+
+    def tokenize(self, bios=None):
+        &#34;&#34;&#34;
+        Tokenize the bios string by removing punctuation and stopwords.
+
+        Args:
+            bios (str, optional): The bios string to tokenize. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of tokens in the bios string.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.bios = bios
+
+        # 1 - remove punctuation
+        self.tokens = word_tokenize(self.bios.lower().translate(str.maketrans(&#39;&#39;, &#39;&#39;, string.punctuation)), language=&#39;french&#39;)
+        # 2 - Remove the stop words
+        self.tokens = [token for token in self.tokens if ((token not in stopwords_en) and (token not in stopwords_fr))]
+
+        return self.tokens
+
+    def bi_tokenize(self, bios=None):
+        &#34;&#34;&#34;
+        Tokenize the bios string into bi-tokens.
+
+        Args:
+            bios (str, optional): The bios string to tokenize. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of bi-tokens in the bios string.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.bios = bios
+            self.tokenize()
+        elif not hasattr(self, &#39;tokens&#39;):
+            self.tokenize()
+
+        self.bi_tokens = list(nltk.bigrams(self.tokens))
+
+        return self.bi_tokens
+
+    def full_tokenize(self, bios=None):
+        &#34;&#34;&#34;
+        Tokenize the bios string into tokens and bi-tokens.
+
+        Args:
+            bios (str, optional): The bios string to tokenize. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of tokens and bi-tokens in the bios string.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.bios = bios
+            self.tokenize()
+            self.bi_tokenize()
+        if not hasattr(self, &#39;tokens&#39;):
+            self.tokenize()
+        if not hasattr(self, &#39;bi_tokens&#39;):
+            self.bi_tokenize()
+
+        self.full_tokens = self.tokens + self.bi_tokens
+
+        return self.full_tokens
+
+    def get_professions(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of professions declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of professions declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+
+        # Identify professions in tokens
+        self.professions = []
+        for token in self.full_tokens:
+            try:
+                self.professions.append(map_Keywords_to_professions[token])
+            except:
+                pass
+
+        self.professions = list(set(self.professions))
+
+        return self.professions
+
+    def get_prostatus(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of professional statuses declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of professional statuses declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+
+        # Identify statuses in tokens
+        self.prostatus = []
+        for token in self.full_tokens:
+            try:
+                self.prostatus.append(map_Keywords_to_prostatuses[token])
+            except:
+                pass
+
+        self.prostatus = list(set(self.prostatus))
+
+        return self.prostatus
+
+    def get_actorstatuses(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of actor statuses declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of actor statuses declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+
+        # Identify statuses in tokens
+        self.actorstatuses = []
+        for token in self.full_tokens:
+            try:
+                self.actorstatuses.append(map_Keywords_to_actorstatuses[token])
+            except:
+                pass
+
+        self.actorstatuses = list(set(self.actorstatuses))
+        return self.actorstatuses
+
+    def get_groupstatuses(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of group statuses declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of group statuses declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+        # Identify statuses in tokens
+        self.groupstatuses = []
+        for token in self.full_tokens:
+            try:
+                self.groupstatuses.append(map_Keywords_to_groupstatuses[token])
+            except:
+                pass
+
+        self.groupstatuses = list(set(self.groupstatuses))
+        return self.groupstatuses
+
+    def get_universitystatuses(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of university statuses declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of university statuses declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+        # Identify statuses in tokens
+        self.universitystatuses = []
+        for token in self.full_tokens:
+            try:
+                self.universitystatuses.append(map_Keywords_to_universitystatuses[token])
+            except:
+                pass
+
+        self.universitystatuses = list(set(self.universitystatuses))
+        return self.universitystatuses
+
+    def get_allstatuses(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of all statuses declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of all statuses declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+        # Identify statuses in tokens
+        self.allstatuses = []
+        for token in self.full_tokens:
+            try:
+                self.allstatuses.append(map_Keywords_to_allstatuses[token])
+            except:
+                pass
+
+        self.allstatuses = list(set(self.allstatuses))
+        return self.allstatuses
+
+    def get_ages(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of ages declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of ages declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+        # Identify ages in tokens
+        self.ages = []
+        for token in self.full_tokens:
+            try:
+                self.ages.append(map_Keywords_to_ages[token])
+            except:
+                pass
+
+        self.ages = list(set(self.ages))
+        if len(self.ages) &gt; 1:
+            self.ages = []
+
+        return self.ages
+
+    def get_gender(self, bios=None):
+        &#34;&#34;&#34;
+        Return the gender declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The gender declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+        # Identify gender in tokens
+        self.gender = []
+        for token in self.full_tokens:
+            try:
+                self.gender.append(map_Keywords_to_gender[token])
+            except:
+                pass
+
+        self.gender = list(set(self.gender))
+
+        if &#34;Woman&#34; in self.gender:
+            self.gender = [&#34;Woman&#34;]
+
+        return self.gender
+
+    def get_topics(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of topics declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of topics declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+        # Identify topics in tokens
+        self.topics = []
+        for token in self.full_tokens:
+            try:
+                self.topics.append(map_Keywords_to_topics[token])
+            except:
+                pass
+
+        self.topics = list(set(self.topics))
+        return self.topics
+
+    def get_lang(self, bios=None, mainfrench=True):
+        &#34;&#34;&#34;
+        Use 3 different language models to identify the language of the bios by majority vote.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+            mainfrench (bool, optional): If True, it means that French is the expected language and hence only one model out of 3 identifying French will be considered enough. Defaults to True.
+
+        Returns:
+            string: The recognized language standard code (e.g., &#34;en&#34;, &#34;fr&#34;, &#34;sp&#34;).
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.bios = bios
+
+        self.language = lang(self.bios, mainfrench)
+        return self.language
+
+    def get_PCSgroup(self, bios=None):
+        &#34;&#34;&#34;
+        Return the PCS group corresponding to the professions in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The PCS group corresponding to the profession.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.get_professions(bios=bios)
+        if not(hasattr(self, &#39;professions&#39;)):
+            self.get_professions()
+
+        self.PCSgroup = []
+        for pro in self.professions:
+            self.PCSgroup.append(map_professions_to_PCSgroups[pro])
+        self.PCSgroup = list(set(self.PCSgroup))
+
+        return(self.PCSgroup)
+
+###########################################
+    # Independent functions
+###########################################
+    
+
+
+def tokenize(bios) :
+    &#34;&#34;&#34;Tokenize the bios by removing punctuation and stopwords.
+
+    Args:
+        bios (str): The bios to be tokenized.
+
+    Returns:
+        list: A list of words with no punctuation or stopwords.
+    &#34;&#34;&#34;
+    # 1 - remove punctuation
+    tokens = word_tokenize(bios.lower().translate(str.maketrans(&#39;&#39;, &#39;&#39;, string.punctuation)), language=&#39;french&#39;)
+
+    # 2 - Remove the stop word
+    tokens = [token for token in tokens if ((token not in stopwords_en) and (token not in stopwords_fr))]
+
+    return(tokens)
+
+def bi_tokenize(bios):
+    &#34;&#34;&#34;Return the bi-tokens in the bios (list of tuple of following tokens).
+
+    Args:
+        bios (list): A list of bios to tokenize.
+
+    Returns:
+        list: A list of bi-tokens (tuples of following tokens).
+    &#34;&#34;&#34;
+    tokens = tokenize(bios)
+    bi_tokens = list(nltk.bigrams(tokens))
+    return bi_tokens
+
+def full_tokenize(bios):
+    &#34;&#34;&#34;Return the list of tokens and bi-tokens in the bios.
+
+    Args:
+        bios (str): The input bios to tokenize.
+
+    Returns:
+        list: The list of tokens and bi-tokens extracted from the bios.
+    &#34;&#34;&#34;
+    tokens = tokenize(bios)
+    bi_tokens = bi_tokenize(bios)
+    full_tokens = tokens + bi_tokens
+    return full_tokens
+
+def get_professions(bios=None, tokens=None):
+    &#34;&#34;&#34;Return the list of professions declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+        tokens (list): The pre-tokenized list of bios. If provided, the function will use these tokens.
+
+    Returns:
+        list: A list of professions identified in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = tokenize(bios)
+
+    # Identify professions in tokens
+    professions = []
+    for token in tokens:
+        try:
+            professions.append(map_Keywords_to_professions[token])
+        except:
+            pass
+
+    professions = list(set(professions))
+
+    return professions
+
+def get_prostatus(bios=None, tokens=None):
+    &#34;&#34;&#34;Return the list of professional statuses declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+        tokens (list): The pre-tokenized bios. If provided, the function will use these tokens instead of tokenizing the bios.
+
+    Returns:
+        list: A list of professional statuses found in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = tokenize(bios)
+
+    # Identify statuses in tokens
+    prostatus = []
+    for token in tokens:
+        try:
+            prostatus.append(map_Keywords_to_prostatuses[token])
+        except:
+            pass
+
+    prostatus = list(set(prostatus))
+
+    return prostatus
+
+def get_actorstatuses(bios=None, tokens=None):
+    &#34;&#34;&#34;Return the list of actor statuses declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+        tokens (list): The pre-tokenized bios. If provided, the function will use these tokens instead of tokenizing the bios.
+
+    Returns:
+        list: A list of actor statuses found in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = tokenize(bios)
+
+    # Identify statuses in tokens
+    actorstatuses = []
+    for token in tokens:
+        try:
+            actorstatuses.append(map_Keywords_to_actorstatuses[token])
+        except:
+            pass
+
+    actorstatuses = list(set(actorstatuses))
+    return actorstatuses
+
+def get_groupstatuses(bios=None, tokens=None):
+    &#34;&#34;&#34;
+    Return the list of group statuses declared in the bios.
+
+    Parameters:
+    - bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+    - tokens (list): The pre-tokenized list of bios. If provided, the function will use these tokens.
+
+    Returns:
+    - list: The list of group statuses found in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = tokenize(bios)
+
+    # Identify statuses in tokens
+    groupstatuses = []
+    for token in tokens:
+        try:
+            groupstatuses.append(map_Keywords_to_groupstatuses[token])
+        except:
+            pass
+
+    groupstatuses = list(set(groupstatuses))
+    return groupstatuses
+
+def get_universitystatuses(bios = None, tokens = None) :
+    &#34;&#34;&#34;Return the list of the university statuses declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If not provided, tokens must be provided.
+        tokens (list): The pre-tokenized bios. If not provided, bios will be tokenized.
+
+    Returns:
+        list: The list of university statuses found in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = tokenize(bios)
+
+    # Identify statuses in tokens
+    universitystatuses = []
+    for token in tokens:
+        try:
+            universitystatuses.append(map_Keywords_to_universitystatuses[token])
+        except:
+            pass
+
+    universitystatuses = list(set(universitystatuses))
+    return universitystatuses
+
+def get_allstatuses(bios=None, tokens=None):
+    &#34;&#34;&#34;Return the list of all statuses declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+        tokens (list): The pre-tokenized bios. If provided, the function will use these tokens instead of tokenizing the bios.
+
+    Returns:
+        list: A list of all unique statuses found in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = tokenize(bios)
+    
+    # Identify statuses in tokens
+    allstatuses = []
+    for token in tokens:
+        try:
+            allstatuses.append(map_Keywords_to_allstatuses[token])
+        except:
+            pass
+                
+    allstatuses = list(set(allstatuses))
+    return allstatuses
+
+def get_ages(bios=None, tokens=None):
+    &#34;&#34;&#34;Return the list of ages declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+        tokens (list): The pre-tokenized list of bios. If provided, the function will use these tokens.
+
+    Returns:
+        list: A list of ages declared in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = tokenize(bios)
+
+    # Identify ages in tokens
+    ages = []
+    for token in tokens:
+        try:
+            ages.append(map_Keywords_to_ages[token])
+        except:
+            pass
+
+    ages = list(set(ages))
+    if len(ages) &gt; 1:
+        ages = []
+
+    return ages
+
+def get_gender(bios=None, tokens=None):
+    &#34;&#34;&#34;Return the list of genders declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+        tokens (list): The pre-tokenized list of bios. If provided, the function will use these tokens.
+
+    Returns:
+        list: A list of genders declared in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = full_tokenize(bios)
+        
+    # Identify genders in tokens
+    genders = []
+    for token in tokens:
+        if token in map_Keywords_to_gender:
+            genders.append(map_Keywords_to_gender[token])
+                
+    genders = list(set(genders))
+    if &#34;Woman&#34; in genders:
+        genders = [&#34;Woman&#34;]
+    
+    return genders
+
+def get_topics(bios=None, tokens=None):
+    &#34;&#34;&#34;Return the list of topics declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+        tokens (list): The pre-tokenized list of tokens. If provided, the function will use these tokens instead of tokenizing the bios.
+
+    Returns:
+        list: A list of topics identified in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = full_tokenize(bios)
+
+    # Identify topics in tokens
+    topics = []
+    for token in tokens:
+        if token in map_Keywords_to_topics:
+            topics.append(map_Keywords_to_topics[token])
+
+    topics = list(set(topics))
+    return topics
+
+def get_PCSgroup(bios=None, tokens=None, professions=None):
+    &#34;&#34;&#34;
+    Return the PCS group corresponding to the profession.
+
+    Parameters:
+    - bios (str): The bios text to analyze. If provided, it will be tokenized and used to determine the professions.
+    - tokens (list): The pre-tokenized list of words. If provided, it will be used to determine the professions.
+    - professions (list): The list of professions. If provided, it will be used directly.
+
+    Returns:
+    - PCSgroup (list): The list of PCS groups corresponding to the given professions.
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = full_tokenize(bios)
+        professions = get_professions(tokens=tokens)
+    if tokens is not None:
+        professions = get_professions(tokens=tokens)
+
+    PCSgroup = []
+    for pro in professions:
+        PCSgroup.append(map_professions_to_PCSgroups[pro])
+    PCSgroup = list(set(PCSgroup))
+
+    return PCSgroup
+
+
+class df_bios_analyzer():
+    &#34;&#34;&#34;
+    A class for processing a dataframe of bios strings, offering methods to analyze the strings as Twitter bios.
+
+    Attributes:
+        df (pandas.DataFrame): The dataframe containing the bios strings.
+        description_column (str): The column name in the dataframe that contains the bios strings.
+        bios_analyzer (bios_analyzer): An instance of the bios_analyzer class for analyzing individual bios strings.
+
+    &#34;&#34;&#34;
+
+    def __init__(self, df, description_column):
+        &#34;&#34;&#34;
+        Initialize the df_bios_analyzer with a dataframe and the name of the column containing the bios strings.
+
+        Args:
+            df (pandas.DataFrame): The dataframe containing the bios strings.
+            description_column (str): The column name in the dataframe that contains the bios strings.
+        &#34;&#34;&#34;
+        self.df = df
+        self.description_column = description_column
+
+    def tokenize(self):
+        &#34;&#34;&#34;
+        Tokenize the bios strings in the dataframe.
+        The results are stored in a new column &#39;tokens&#39;.
+        &#34;&#34;&#34;
+        self.df[&#39;tokens&#39;] = self.df[self.description_column].apply(tokenize)
+
+    def bi_tokenize(self):
+        &#34;&#34;&#34;
+        Perform bi-tokenization on the bios strings in the dataframe.
+        The results are stored in a new column &#39;bi_tokens&#39;.
+        &#34;&#34;&#34;
+        self.df[&#39;bi_tokens&#39;] = self.df[self.description_column].apply(bi_tokenize)
+
+    def full_tokenize(self):
+        &#34;&#34;&#34;
+        Perform full tokenization on the bios strings in the dataframe.
+        The results are stored in a new column &#39;full_tokens&#39;.
+        &#34;&#34;&#34;
+        self.df[&#39;full_tokens&#39;] = self.df[self.description_column].apply(full_tokenize)
+
+    def get_professions(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract professions from the bios strings in the dataframe. If a column of tokens is provided, 
+        it will use these tokens instead of the bios strings.
+        The results are stored in a new column &#39;professions&#39;.
+
+        Args:
+            tokens_column (str, optional): The column name in the dataframe that contains the tokens. Defaults to None.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;professions&#39;] = self.df[tokens_column].apply(lambda x : get_professions(tokens=x))
+        else:
+            self.df[&#39;professions&#39;] = self.df[self.description_column].apply(lambda x : get_professions(bios=x))
+
+
+    def get_prostatus(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract professional statuses from the bios strings in the dataframe.
+        The results are stored in a new column &#39;prostatus&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;prostatus&#39;] = self.df[tokens_column].apply(lambda x : get_prostatus(tokens=x))
+        else:
+            self.df[&#39;prostatus&#39;] = self.df[self.description_column].apply(lambda x : get_prostatus(bios=x))
+
+    def get_actorstatuses(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract actor statuses from the bios strings in the dataframe.
+        The results are stored in a new column &#39;actorstatus&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;actorstatus&#39;] = self.df[tokens_column].apply(lambda x : get_actorstatuses(tokens=x))
+        else:
+            self.df[&#39;actorstatus&#39;] = self.df[self.description_column].apply(lambda x : get_actorstatuses(bios=x))
+
+    def get_groupstatuses(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract group statuses from the bios strings in the dataframe.
+        The results are stored in a new column &#39;groupstatus&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;groupstatus&#39;] = self.df[tokens_column].apply(lambda x : get_groupstatuses(tokens=x))
+        else:
+            self.df[&#39;groupstatus&#39;] = self.df[self.description_column].apply(lambda x : get_groupstatuses(bios=x))
+
+    def get_universitystatuses(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract university statuses from the bios strings in the dataframe.
+        The results are stored in a new column &#39;universitystatus&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;universitystatus&#39;] = self.df[tokens_column].apply(lambda x : get_universitystatuses(tokens=x))
+        else:
+            self.df[&#39;universitystatus&#39;] = self.df[self.description_column].apply(lambda x : get_universitystatuses(bios=x))
+
+    def get_allstatuses(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract all types of statuses from the bios strings in the dataframe.
+        The results are stored in a new column &#39;allstatus&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;allstatus&#39;] = self.df[tokens_column].apply(lambda x : get_allstatuses(tokens=x))
+        else:
+            self.df[&#39;allstatus&#39;] = self.df[self.description_column].apply(lambda x : get_allstatuses(bios=x))
+
+    def get_ages(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract ages from the bios strings in the dataframe.
+        The results are stored in a new column &#39;age&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;age&#39;] = self.df[tokens_column].apply(lambda x : get_ages(tokens=x))
+        else:
+            self.df[&#39;age&#39;] = self.df[self.description_column].apply(lambda x : get_ages(bios=x))
+
+    def get_gender(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract gender from the bios strings in the dataframe.
+        The results are stored in a new column &#39;gender&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;gender&#39;] = self.df[tokens_column].apply(lambda x : get_gender(tokens=x))
+        else:
+            self.df[&#39;gender&#39;] = self.df[self.description_column].apply(lambda x : get_gender(bios=x))
+
+    def get_topics(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract topics from the bios strings in the dataframe.
+        The results are stored in a new column &#39;topic&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;topic&#39;] = self.df[tokens_column].apply(lambda x : get_topics(tokens=x))
+        else:
+            self.df[&#39;topic&#39;] = self.df[self.description_column].apply(lambda x : get_topics(bios=x))
+
+    def get_lang(self, mainfrench=True):
+        &#34;&#34;&#34;
+        Determine the language of the bios strings in the dataframe.
+
+        Args:
+            mainfrench (bool, optional): If true it means that French is the expected language and hence only one model on 3 identifying French will be considered enough. Defaults to True.
+
+        The results are stored in a new column &#39;lang&#39;.
+        &#34;&#34;&#34;
+        self.df[&#39;lang&#39;] = self.df[self.description_column].apply(lambda x : lang(text=x, mainfrench=mainfrench))
+
+    def get_PCSgroup(self, tokens_column=None, professions_column=None):
+        &#34;&#34;&#34;
+        Extract the PCS group corresponding to the professions in the bios strings in the dataframe.
+        The results are stored in a new column &#39;PCSgroup&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;PCSgroup&#39;] = self.df[tokens_column].apply(lambda x : get_PCSgroup(tokens=x))
+        if professions_column is not None:
+            self.df[&#39;PCSgroup&#39;] = self.df[professions_column].apply(lambda x : get_PCSgroup(profession=x))
+        else:
+            self.df[&#39;PCSgroup&#39;] = self.df[self.description_column].apply(lambda x : get_PCSgroup(bios=x))
+
+    def get_all(self, mainfrench=True):
+        &#34;&#34;&#34;
+        Perform all analyses on the bios strings in the dataframe.
+
+        Args:
+            tokens_column (str, optional): The column name in the dataframe that contains the tokens. Defaults to None.
+            mainfrench (bool, optional): If true it means that French is the expected language and hence only one model on 3 identifying French will be considered enough. Defaults to True.
+        &#34;&#34;&#34;
+        self.tokenize()
+        self.bi_tokenize()
+        self.full_tokenize()
+        tokens_column = &#39;full_tokens&#39;
+        self.get_professions(tokens_column)
+        self.get_prostatus(tokens_column)
+        self.get_actorstatuses(tokens_column)
+        self.get_groupstatuses(tokens_column)
+        self.get_universitystatuses(tokens_column)
+        self.get_allstatuses(tokens_column)
+        self.get_ages(tokens_column)
+        self.get_gender(tokens_column)
+        self.get_topics(tokens_column)
+        self.get_lang(mainfrench=mainfrench)
+
+        return (self.df)
+
+###########################################
+# Getting list of keywords
+###########################################
+    
+def get_pro_kewords() :
+    &#34;&#34;&#34;Return the list of professions keywords.
+    &#34;&#34;&#34;
+    # Load keyword dataframes (classes to keywords)
+    df_map_word_professions = pd.read_excel(data_path, sheet_name=&#39;Professions&#39;)
+    # Remove the &#39;Professions&#39; column
+    df_map_word_professions = df_map_word_professions.drop(columns=[&#39;Professions&#39;])
+    # Rename the &#39;English&#39; column to &#39;Professions&#39;
+    df_map_word_professions = df_map_word_professions.rename(columns={&#39;English&#39;: &#39;Professions&#39;})
+    # Set &#39;Professions&#39; as the index
+    df_map_word_professions.set_index(&#39;Professions&#39;, inplace=True)
+
+    return(df_map_word_professions)
+
+def get_status_kewords() :
+    &#34;&#34;&#34;Return the list of status keywords.
+    &#34;&#34;&#34;
+    # Load keyword dataframes (classes to keywords)
+    df_map_word_allstatus = pd.read_excel(data_path, sheet_name=&#39;Status&#39;)
+    # Remove the &#39;Status&#39; column
+    df_map_word_allstatus = df_map_word_allstatus.drop(columns=[&#39;Status&#39;])
+    # Rename the &#39;English&#39; column to &#39;Status&#39;
+    df_map_word_allstatus = df_map_word_allstatus.rename(columns={&#39;English&#39;: &#39;Status&#39;})
+    # Set &#39;Status&#39; as the index
+    df_map_word_allstatus.set_index(&#39;Status&#39;, inplace=True)
+
+    return(df_map_word_allstatus)
+
+def get_age_kewords() :
+    &#34;&#34;&#34;Return the list of age keywords.
+    &#34;&#34;&#34;
+    # Load keyword dataframes (classes to keywords)
+    df_map_word_age = pd.read_excel(data_path, sheet_name=&#39;Age&#39;)
+    # Remove the &#39;Status&#39; column
+    df_map_word_age = df_map_word_age.drop(columns=[&#39;Status&#39;])
+    # Set &#39;Age&#39; as the index
+    df_map_word_age.set_index(&#39;Age&#39;, inplace=True)
+
+    return(df_map_word_age)
+
+def get_gender_kewords() :
+    &#34;&#34;&#34;Return the list of gender keywords.
+    &#34;&#34;&#34;
+    # Load keyword dataframes (classes to keywords)
+    df_map_word_gender = pd.read_excel(data_path, sheet_name=&#39;Genre&#39;)
+     # Remove the &#39;Genre&#39; column
+    df_map_word_gender = df_map_word_gender.drop(columns=[&#39;Genre&#39;])
+    # Rename the &#39;English&#39; column to &#39;Gender&#39;
+    df_map_word_gender = df_map_word_gender.rename(columns={&#39;English&#39;: &#39;Gender&#39;})
+    # Set &#39;Gender&#39; as the index
+    df_map_word_gender.set_index(&#39;Gender&#39;, inplace=True)
+    return(df_map_word_gender)
+
+def get_topic_kewords() :
+    &#34;&#34;&#34;Return the list of topic keywords.
+    &#34;&#34;&#34;
+    # Load keyword dataframes (classes to keywords)
+    df_map_word_topic = pd.read_excel(data_path, sheet_name=&#39;Topics&#39;)
+    # Remove the &#39;Topics&#39; column
+    df_map_word_topic = df_map_word_topic.drop(columns=[&#39;Sujet&#39;])
+    # Rename the &#39;English&#39; column to &#39;Topics&#39;
+    df_map_word_topic = df_map_word_topic.rename(columns={&#39;English&#39;: &#39;Topics&#39;})
+    # Set &#39;Topics&#39; as the index
+    df_map_word_topic.set_index(&#39;Topics&#39;, inplace=True)
+    return(df_map_word_topic)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="twitter_profile_predictor.bios_analyzer.bi_tokenize"><code class="name flex">
+<span>def <span class="ident">bi_tokenize</span></span>(<span>bios)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the bi-tokens in the bios (list of tuple of following tokens).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list of bios to tokenize.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>A list of bi-tokens (tuples of following tokens).</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def bi_tokenize(bios):
+    &#34;&#34;&#34;Return the bi-tokens in the bios (list of tuple of following tokens).
+
+    Args:
+        bios (list): A list of bios to tokenize.
+
+    Returns:
+        list: A list of bi-tokens (tuples of following tokens).
+    &#34;&#34;&#34;
+    tokens = tokenize(bios)
+    bi_tokens = list(nltk.bigrams(tokens))
+    return bi_tokens</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.detlang"><code class="name flex">
+<span>def <span class="ident">detlang</span></span>(<span>text)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Detect the language of the given text using the langdetect library.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
+<dd>The text to detect the language of.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>The detected language code.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def detlang(text):
+    &#34;&#34;&#34;
+    Detect the language of the given text using the langdetect library.
+
+    Args:
+        text (str): The text to detect the language of.
+
+    Returns:
+        str: The detected language code.
+    &#34;&#34;&#34;
+    try:
+        return langdetect.detect(text)
+    except:
+        return 0</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.detlang_cld"><code class="name flex">
+<span>def <span class="ident">detlang_cld</span></span>(<span>text)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Detect the language of the given text using the cld2 library.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
+<dd>The text to detect the language of.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>The detected language code.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def detlang_cld(text):
+    &#34;&#34;&#34;
+    Detect the language of the given text using the cld2 library.
+
+    Args:
+        text (str): The text to detect the language of.
+
+    Returns:
+        str: The detected language code.
+    &#34;&#34;&#34;
+    try:
+        results = cld2.detect(text)
+        if results.is_reliable:
+            # Extract language code
+            return results.details[0].language_code
+        else:
+            return 0
+    except:
+        return 0</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.detlang_id"><code class="name flex">
+<span>def <span class="ident">detlang_id</span></span>(<span>text)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Detect the language of the given text using the langid library.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
+<dd>The text to detect the language of.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>The detected language code.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def detlang_id(text):
+    &#34;&#34;&#34;
+    Detect the language of the given text using the langid library.
+
+    Args:
+        text (str): The text to detect the language of.
+
+    Returns:
+        str: The detected language code.
+    &#34;&#34;&#34;
+    try:
+        return langid.classify(text)[0]
+    except:
+        return 0</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.full_tokenize"><code class="name flex">
+<span>def <span class="ident">full_tokenize</span></span>(<span>bios)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of tokens and bi-tokens in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code></dt>
+<dd>The input bios to tokenize.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The list of tokens and bi-tokens extracted from the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def full_tokenize(bios):
+    &#34;&#34;&#34;Return the list of tokens and bi-tokens in the bios.
+
+    Args:
+        bios (str): The input bios to tokenize.
+
+    Returns:
+        list: The list of tokens and bi-tokens extracted from the bios.
+    &#34;&#34;&#34;
+    tokens = tokenize(bios)
+    bi_tokens = bi_tokenize(bios)
+    full_tokens = tokens + bi_tokens
+    return full_tokens</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.get_PCSgroup"><code class="name flex">
+<span>def <span class="ident">get_PCSgroup</span></span>(<span>bios=None, tokens=None, professions=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the PCS group corresponding to the profession.</p>
+<p>Parameters:
+- bios (str): The bios text to analyze. If provided, it will be tokenized and used to determine the professions.
+- tokens (list): The pre-tokenized list of words. If provided, it will be used to determine the professions.
+- professions (list): The list of professions. If provided, it will be used directly.</p>
+<p>Returns:
+- PCSgroup (list): The list of PCS groups corresponding to the given professions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_PCSgroup(bios=None, tokens=None, professions=None):
+    &#34;&#34;&#34;
+    Return the PCS group corresponding to the profession.
+
+    Parameters:
+    - bios (str): The bios text to analyze. If provided, it will be tokenized and used to determine the professions.
+    - tokens (list): The pre-tokenized list of words. If provided, it will be used to determine the professions.
+    - professions (list): The list of professions. If provided, it will be used directly.
+
+    Returns:
+    - PCSgroup (list): The list of PCS groups corresponding to the given professions.
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = full_tokenize(bios)
+        professions = get_professions(tokens=tokens)
+    if tokens is not None:
+        professions = get_professions(tokens=tokens)
+
+    PCSgroup = []
+    for pro in professions:
+        PCSgroup.append(map_professions_to_PCSgroups[pro])
+    PCSgroup = list(set(PCSgroup))
+
+    return PCSgroup</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.get_actorstatuses"><code class="name flex">
+<span>def <span class="ident">get_actorstatuses</span></span>(<span>bios=None, tokens=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of actor statuses declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code></dt>
+<dd>The bios to analyze. If provided, the function will tokenize the bios.</dd>
+<dt><strong><code>tokens</code></strong> :&ensp;<code>list</code></dt>
+<dd>The pre-tokenized bios. If provided, the function will use these tokens instead of tokenizing the bios.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>A list of actor statuses found in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_actorstatuses(bios=None, tokens=None):
+    &#34;&#34;&#34;Return the list of actor statuses declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+        tokens (list): The pre-tokenized bios. If provided, the function will use these tokens instead of tokenizing the bios.
+
+    Returns:
+        list: A list of actor statuses found in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = tokenize(bios)
+
+    # Identify statuses in tokens
+    actorstatuses = []
+    for token in tokens:
+        try:
+            actorstatuses.append(map_Keywords_to_actorstatuses[token])
+        except:
+            pass
+
+    actorstatuses = list(set(actorstatuses))
+    return actorstatuses</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.get_age_kewords"><code class="name flex">
+<span>def <span class="ident">get_age_kewords</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of age keywords.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_age_kewords() :
+    &#34;&#34;&#34;Return the list of age keywords.
+    &#34;&#34;&#34;
+    # Load keyword dataframes (classes to keywords)
+    df_map_word_age = pd.read_excel(data_path, sheet_name=&#39;Age&#39;)
+    # Remove the &#39;Status&#39; column
+    df_map_word_age = df_map_word_age.drop(columns=[&#39;Status&#39;])
+    # Set &#39;Age&#39; as the index
+    df_map_word_age.set_index(&#39;Age&#39;, inplace=True)
+
+    return(df_map_word_age)</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.get_ages"><code class="name flex">
+<span>def <span class="ident">get_ages</span></span>(<span>bios=None, tokens=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of ages declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code></dt>
+<dd>The bios to analyze. If provided, the function will tokenize the bios.</dd>
+<dt><strong><code>tokens</code></strong> :&ensp;<code>list</code></dt>
+<dd>The pre-tokenized list of bios. If provided, the function will use these tokens.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>A list of ages declared in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_ages(bios=None, tokens=None):
+    &#34;&#34;&#34;Return the list of ages declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+        tokens (list): The pre-tokenized list of bios. If provided, the function will use these tokens.
+
+    Returns:
+        list: A list of ages declared in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = tokenize(bios)
+
+    # Identify ages in tokens
+    ages = []
+    for token in tokens:
+        try:
+            ages.append(map_Keywords_to_ages[token])
+        except:
+            pass
+
+    ages = list(set(ages))
+    if len(ages) &gt; 1:
+        ages = []
+
+    return ages</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.get_allstatuses"><code class="name flex">
+<span>def <span class="ident">get_allstatuses</span></span>(<span>bios=None, tokens=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of all statuses declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code></dt>
+<dd>The bios to analyze. If provided, the function will tokenize the bios.</dd>
+<dt><strong><code>tokens</code></strong> :&ensp;<code>list</code></dt>
+<dd>The pre-tokenized bios. If provided, the function will use these tokens instead of tokenizing the bios.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>A list of all unique statuses found in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_allstatuses(bios=None, tokens=None):
+    &#34;&#34;&#34;Return the list of all statuses declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+        tokens (list): The pre-tokenized bios. If provided, the function will use these tokens instead of tokenizing the bios.
+
+    Returns:
+        list: A list of all unique statuses found in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = tokenize(bios)
+    
+    # Identify statuses in tokens
+    allstatuses = []
+    for token in tokens:
+        try:
+            allstatuses.append(map_Keywords_to_allstatuses[token])
+        except:
+            pass
+                
+    allstatuses = list(set(allstatuses))
+    return allstatuses</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.get_gender"><code class="name flex">
+<span>def <span class="ident">get_gender</span></span>(<span>bios=None, tokens=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of genders declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code></dt>
+<dd>The bios to analyze. If provided, the function will tokenize the bios.</dd>
+<dt><strong><code>tokens</code></strong> :&ensp;<code>list</code></dt>
+<dd>The pre-tokenized list of bios. If provided, the function will use these tokens.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>A list of genders declared in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_gender(bios=None, tokens=None):
+    &#34;&#34;&#34;Return the list of genders declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+        tokens (list): The pre-tokenized list of bios. If provided, the function will use these tokens.
+
+    Returns:
+        list: A list of genders declared in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = full_tokenize(bios)
+        
+    # Identify genders in tokens
+    genders = []
+    for token in tokens:
+        if token in map_Keywords_to_gender:
+            genders.append(map_Keywords_to_gender[token])
+                
+    genders = list(set(genders))
+    if &#34;Woman&#34; in genders:
+        genders = [&#34;Woman&#34;]
+    
+    return genders</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.get_gender_kewords"><code class="name flex">
+<span>def <span class="ident">get_gender_kewords</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of gender keywords.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_gender_kewords() :
+    &#34;&#34;&#34;Return the list of gender keywords.
+    &#34;&#34;&#34;
+    # Load keyword dataframes (classes to keywords)
+    df_map_word_gender = pd.read_excel(data_path, sheet_name=&#39;Genre&#39;)
+     # Remove the &#39;Genre&#39; column
+    df_map_word_gender = df_map_word_gender.drop(columns=[&#39;Genre&#39;])
+    # Rename the &#39;English&#39; column to &#39;Gender&#39;
+    df_map_word_gender = df_map_word_gender.rename(columns={&#39;English&#39;: &#39;Gender&#39;})
+    # Set &#39;Gender&#39; as the index
+    df_map_word_gender.set_index(&#39;Gender&#39;, inplace=True)
+    return(df_map_word_gender)</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.get_groupstatuses"><code class="name flex">
+<span>def <span class="ident">get_groupstatuses</span></span>(<span>bios=None, tokens=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of group statuses declared in the bios.</p>
+<p>Parameters:
+- bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+- tokens (list): The pre-tokenized list of bios. If provided, the function will use these tokens.</p>
+<p>Returns:
+- list: The list of group statuses found in the bios.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_groupstatuses(bios=None, tokens=None):
+    &#34;&#34;&#34;
+    Return the list of group statuses declared in the bios.
+
+    Parameters:
+    - bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+    - tokens (list): The pre-tokenized list of bios. If provided, the function will use these tokens.
+
+    Returns:
+    - list: The list of group statuses found in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = tokenize(bios)
+
+    # Identify statuses in tokens
+    groupstatuses = []
+    for token in tokens:
+        try:
+            groupstatuses.append(map_Keywords_to_groupstatuses[token])
+        except:
+            pass
+
+    groupstatuses = list(set(groupstatuses))
+    return groupstatuses</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.get_pro_kewords"><code class="name flex">
+<span>def <span class="ident">get_pro_kewords</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of professions keywords.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_pro_kewords() :
+    &#34;&#34;&#34;Return the list of professions keywords.
+    &#34;&#34;&#34;
+    # Load keyword dataframes (classes to keywords)
+    df_map_word_professions = pd.read_excel(data_path, sheet_name=&#39;Professions&#39;)
+    # Remove the &#39;Professions&#39; column
+    df_map_word_professions = df_map_word_professions.drop(columns=[&#39;Professions&#39;])
+    # Rename the &#39;English&#39; column to &#39;Professions&#39;
+    df_map_word_professions = df_map_word_professions.rename(columns={&#39;English&#39;: &#39;Professions&#39;})
+    # Set &#39;Professions&#39; as the index
+    df_map_word_professions.set_index(&#39;Professions&#39;, inplace=True)
+
+    return(df_map_word_professions)</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.get_professions"><code class="name flex">
+<span>def <span class="ident">get_professions</span></span>(<span>bios=None, tokens=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of professions declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code></dt>
+<dd>The bios to analyze. If provided, the function will tokenize the bios.</dd>
+<dt><strong><code>tokens</code></strong> :&ensp;<code>list</code></dt>
+<dd>The pre-tokenized list of bios. If provided, the function will use these tokens.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>A list of professions identified in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_professions(bios=None, tokens=None):
+    &#34;&#34;&#34;Return the list of professions declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+        tokens (list): The pre-tokenized list of bios. If provided, the function will use these tokens.
+
+    Returns:
+        list: A list of professions identified in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = tokenize(bios)
+
+    # Identify professions in tokens
+    professions = []
+    for token in tokens:
+        try:
+            professions.append(map_Keywords_to_professions[token])
+        except:
+            pass
+
+    professions = list(set(professions))
+
+    return professions</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.get_prostatus"><code class="name flex">
+<span>def <span class="ident">get_prostatus</span></span>(<span>bios=None, tokens=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of professional statuses declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code></dt>
+<dd>The bios to analyze. If provided, the function will tokenize the bios.</dd>
+<dt><strong><code>tokens</code></strong> :&ensp;<code>list</code></dt>
+<dd>The pre-tokenized bios. If provided, the function will use these tokens instead of tokenizing the bios.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>A list of professional statuses found in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_prostatus(bios=None, tokens=None):
+    &#34;&#34;&#34;Return the list of professional statuses declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+        tokens (list): The pre-tokenized bios. If provided, the function will use these tokens instead of tokenizing the bios.
+
+    Returns:
+        list: A list of professional statuses found in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = tokenize(bios)
+
+    # Identify statuses in tokens
+    prostatus = []
+    for token in tokens:
+        try:
+            prostatus.append(map_Keywords_to_prostatuses[token])
+        except:
+            pass
+
+    prostatus = list(set(prostatus))
+
+    return prostatus</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.get_status_kewords"><code class="name flex">
+<span>def <span class="ident">get_status_kewords</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of status keywords.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_status_kewords() :
+    &#34;&#34;&#34;Return the list of status keywords.
+    &#34;&#34;&#34;
+    # Load keyword dataframes (classes to keywords)
+    df_map_word_allstatus = pd.read_excel(data_path, sheet_name=&#39;Status&#39;)
+    # Remove the &#39;Status&#39; column
+    df_map_word_allstatus = df_map_word_allstatus.drop(columns=[&#39;Status&#39;])
+    # Rename the &#39;English&#39; column to &#39;Status&#39;
+    df_map_word_allstatus = df_map_word_allstatus.rename(columns={&#39;English&#39;: &#39;Status&#39;})
+    # Set &#39;Status&#39; as the index
+    df_map_word_allstatus.set_index(&#39;Status&#39;, inplace=True)
+
+    return(df_map_word_allstatus)</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.get_topic_kewords"><code class="name flex">
+<span>def <span class="ident">get_topic_kewords</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of topic keywords.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_topic_kewords() :
+    &#34;&#34;&#34;Return the list of topic keywords.
+    &#34;&#34;&#34;
+    # Load keyword dataframes (classes to keywords)
+    df_map_word_topic = pd.read_excel(data_path, sheet_name=&#39;Topics&#39;)
+    # Remove the &#39;Topics&#39; column
+    df_map_word_topic = df_map_word_topic.drop(columns=[&#39;Sujet&#39;])
+    # Rename the &#39;English&#39; column to &#39;Topics&#39;
+    df_map_word_topic = df_map_word_topic.rename(columns={&#39;English&#39;: &#39;Topics&#39;})
+    # Set &#39;Topics&#39; as the index
+    df_map_word_topic.set_index(&#39;Topics&#39;, inplace=True)
+    return(df_map_word_topic)</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.get_topics"><code class="name flex">
+<span>def <span class="ident">get_topics</span></span>(<span>bios=None, tokens=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of topics declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code></dt>
+<dd>The bios to analyze. If provided, the function will tokenize the bios.</dd>
+<dt><strong><code>tokens</code></strong> :&ensp;<code>list</code></dt>
+<dd>The pre-tokenized list of tokens. If provided, the function will use these tokens instead of tokenizing the bios.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>A list of topics identified in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_topics(bios=None, tokens=None):
+    &#34;&#34;&#34;Return the list of topics declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If provided, the function will tokenize the bios.
+        tokens (list): The pre-tokenized list of tokens. If provided, the function will use these tokens instead of tokenizing the bios.
+
+    Returns:
+        list: A list of topics identified in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = full_tokenize(bios)
+
+    # Identify topics in tokens
+    topics = []
+    for token in tokens:
+        if token in map_Keywords_to_topics:
+            topics.append(map_Keywords_to_topics[token])
+
+    topics = list(set(topics))
+    return topics</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.get_universitystatuses"><code class="name flex">
+<span>def <span class="ident">get_universitystatuses</span></span>(<span>bios=None, tokens=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of the university statuses declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code></dt>
+<dd>The bios to analyze. If not provided, tokens must be provided.</dd>
+<dt><strong><code>tokens</code></strong> :&ensp;<code>list</code></dt>
+<dd>The pre-tokenized bios. If not provided, bios will be tokenized.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The list of university statuses found in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_universitystatuses(bios = None, tokens = None) :
+    &#34;&#34;&#34;Return the list of the university statuses declared in the bios.
+
+    Args:
+        bios (str): The bios to analyze. If not provided, tokens must be provided.
+        tokens (list): The pre-tokenized bios. If not provided, bios will be tokenized.
+
+    Returns:
+        list: The list of university statuses found in the bios.
+
+    &#34;&#34;&#34;
+    if bios is not None:
+        tokens = tokenize(bios)
+
+    # Identify statuses in tokens
+    universitystatuses = []
+    for token in tokens:
+        try:
+            universitystatuses.append(map_Keywords_to_universitystatuses[token])
+        except:
+            pass
+
+    universitystatuses = list(set(universitystatuses))
+    return universitystatuses</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.lang"><code class="name flex">
+<span>def <span class="ident">lang</span></span>(<span>text, mainfrench=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Use 3 different language models to identify the language of the text by majority vote.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
+<dd>The text to identify the language of.</dd>
+<dt><strong><code>mainfrench</code></strong> :&ensp;<code>bool</code></dt>
+<dd>True if the expected language is French.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code> or <code>bool</code></dt>
+<dd>The detected language code or False if no unique language is found.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def lang(text, mainfrench=True):
+    &#34;&#34;&#34;
+    Use 3 different language models to identify the language of the text by majority vote.
+
+    Args:
+        text (str): The text to identify the language of.
+        mainfrench (bool): True if the expected language is French.
+
+    Returns:
+        str or bool: The detected language code or False if no unique language is found.
+    &#34;&#34;&#34;
+    langdet = detlang(text)
+    langid = detlang_id(text)
+    langcld = detlang_cld(text)
+
+    if mainfrench:
+        if langdet == &#39;fr&#39; or langid == &#39;fr&#39; or langcld == &#39;fr&#39;:
+            return &#39;fr&#39;  # WARNING: favor French because of prior of Twitter corpus
+
+    if langdet == langid:
+        return langdet
+    elif langdet == langcld:
+        return langdet
+    elif langid == langcld:
+        return langid
+    else:
+        return False</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.listation"><code class="name flex">
+<span>def <span class="ident">listation</span></span>(<span>literal)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Convert a string representation of a list of words and bi-words into a list format.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>literal</code></strong> :&ensp;<code>str</code></dt>
+<dd>The string representing the list.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The list of words and bi-words.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def listation(literal):
+    &#34;&#34;&#34;
+    Convert a string representation of a list of words and bi-words into a list format.
+
+    Args:
+        literal (str): The string representing the list.
+
+    Returns:
+        list: The list of words and bi-words.
+    &#34;&#34;&#34;
+    listed = []
+    literal = literal.replace(&#39; &#39;, &#39;&#39;).split(&#39;,&#39;)
+    for k in range(len(literal)):
+        if literal[k][0] == &#39;(&#39;:
+            listed.append(literal_eval(literal[k] + &#34;,&#34; + literal[k + 1]))
+        elif literal[k][-1] != &#39;)&#39;:
+            listed.append(literal[k])
+    return listed</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.load_all_dicts"><code class="name flex">
+<span>def <span class="ident">load_all_dicts</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load all the keyword dataframes and transform them into dictionaries.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>tuple</code></dt>
+<dd>A tuple containing the dictionaries for each keyword category.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_all_dicts():
+    &#34;&#34;&#34;
+    Load all the keyword dataframes and transform them into dictionaries.
+
+    Returns:
+        tuple: A tuple containing the dictionaries for each keyword category.
+    &#34;&#34;&#34;
+    # Load keyword dataframes (classes to keywords)
+    df_map_word_professions = pd.read_excel(data_path, sheet_name=&#39;Professions&#39;)
+
+    df_map_word_prostatus = pd.read_excel(data_path, sheet_name=&#39;Professional Statuses&#39;)
+    df_map_word_actorstatus = pd.read_excel(data_path, sheet_name=&#39;Actor Type Status&#39;)
+    df_map_word_groupstatus = pd.read_excel(data_path, sheet_name=&#39;Group Status&#39;)
+    df_map_word_universitystatus = pd.read_excel(data_path, sheet_name=&#39;University Status&#39;)
+    df_map_word_allstatus = pd.read_excel(data_path, sheet_name=&#39;Status&#39;)
+
+    df_map_word_age = pd.read_excel(data_path, sheet_name=&#39;Age&#39;)
+    df_map_word_gender = pd.read_excel(data_path, sheet_name=&#39;Genre&#39;)
+
+    df_map_word_topic = pd.read_excel(data_path, sheet_name=&#39;Topics&#39;)
+
+    # format list of keywords (str to list)
+    df_map_word_professions[&#39;Keywords&#39;] = df_map_word_professions[&#39;Keywords&#39;].apply(listation)
+
+    df_map_word_prostatus[&#39;Keywords&#39;] = df_map_word_prostatus[&#39;Keywords&#39;].apply(listation)
+    df_map_word_actorstatus[&#39;Keywords&#39;] = df_map_word_actorstatus[&#39;Keywords&#39;].apply(listation)
+    df_map_word_groupstatus[&#39;Keywords&#39;] = df_map_word_groupstatus[&#39;Keywords&#39;].apply(listation)
+    df_map_word_universitystatus[&#39;Keywords&#39;] = df_map_word_universitystatus[&#39;Keywords&#39;].apply(listation)
+    df_map_word_allstatus[&#39;Keywords&#39;] = df_map_word_allstatus[&#39;Keywords&#39;].apply(listation)
+
+    df_map_word_age[&#39;Keywords&#39;] = df_map_word_age[&#39;Keywords&#39;].apply(listation)
+    df_map_word_gender[&#39;Keywords&#39;] = df_map_word_gender[&#39;Keywords&#39;].apply(listation)
+
+    df_map_word_topic[&#39;Keywords&#39;] = df_map_word_topic[&#39;Keywords&#39;].apply(listation)
+
+    # transform the keywords dataframe to dictionaries (keywords to classes)
+    pro_key = {}
+    for k in range(len(df_map_word_professions)):
+        for key in df_map_word_professions[&#39;Keywords&#39;][k]:
+            pro_key[key] = df_map_word_professions[&#39;English&#39;][k]
+
+    prostatus_key = {}
+    for k in range(len(df_map_word_prostatus)):
+        for key in df_map_word_prostatus[&#39;Keywords&#39;][k]:
+            prostatus_key[key] = df_map_word_prostatus[&#39;English&#39;][k]
+
+    actorstatus_key = {}
+    for k in range(len(df_map_word_actorstatus)):
+        for key in df_map_word_actorstatus[&#39;Keywords&#39;][k]:
+            actorstatus_key[key] = df_map_word_actorstatus[&#39;English&#39;][k]
+
+    groupstatus_key = {}
+    for k in range(len(df_map_word_groupstatus)):
+        for key in df_map_word_groupstatus[&#39;Keywords&#39;][k]:
+            groupstatus_key[key] = df_map_word_groupstatus[&#39;English&#39;][k]
+
+    universitystatus_key = {}
+    for k in range(len(df_map_word_universitystatus)):
+        for key in df_map_word_universitystatus[&#39;Keywords&#39;][k]:
+            universitystatus_key[key] = df_map_word_universitystatus[&#39;English&#39;][k]
+
+    allstatus_key = {}
+    for k in range(len(df_map_word_allstatus)):
+        for key in df_map_word_allstatus[&#39;Keywords&#39;][k]:
+            allstatus_key[key] = df_map_word_allstatus[&#39;English&#39;][k]
+
+    age_key = {}
+    for k in range(len(df_map_word_age)):
+        for key in df_map_word_age[&#39;Keywords&#39;][k]:
+            age_key[key] = df_map_word_age[&#39;Age&#39;][k]
+
+    gender_key = {}
+    for k in range(len(df_map_word_gender)):
+        for key in df_map_word_gender[&#39;Keywords&#39;][k]:
+            gender_key[key] = df_map_word_gender[&#39;English&#39;][k]
+
+    topic_key = {}
+    for k in range(len(df_map_word_topic)):
+        for key in df_map_word_topic[&#39;Keywords&#39;][k]:
+            topic_key[key] = df_map_word_topic[&#39;English&#39;][k]
+
+    ## PCS groups
+    professions_to_PCSgroups = df_map_word_professions.set_index(&#39;English&#39;)[&#39;Group&#39;].to_dict()
+    # 2.2- Status
+    status_to_stutustype = df_map_word_allstatus.set_index(&#39;English&#39;)[&#39;Type&#39;].to_dict()
+
+    return (
+        pro_key,
+        prostatus_key,
+        actorstatus_key,
+        groupstatus_key,
+        universitystatus_key,
+        allstatus_key,
+        age_key,
+        gender_key,
+        topic_key,
+        professions_to_PCSgroups,
+        status_to_stutustype
+    )</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.process_biwords"><code class="name flex">
+<span>def <span class="ident">process_biwords</span></span>(<span>x)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Transform tuple bi-words in x into string bi-words.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>str, list</code></dt>
+<dd>The element containing bi-words.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code> or <code>list</code></dt>
+<dd>The transformed bi-words.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def process_biwords(x):
+    &#34;&#34;&#34;
+    Transform tuple bi-words in x into string bi-words.
+
+    Args:
+        x (str, list): The element containing bi-words.
+
+    Returns:
+        str or list: The transformed bi-words.
+    &#34;&#34;&#34;
+    if type(x) == list:
+        for k in range(len(x)):
+            if type(x[k]) == tuple:
+                x[k] = x[k][0] + &#39; &#39; + x[k][1]
+            else:
+                x[k] = x[k]
+
+    elif type(x) == tuple:
+        x = x[0] + &#39; &#39; + x[1]
+
+    elif type(x) == str:
+        x = x
+
+    else:
+        x = False
+
+    return x</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.tokenize"><code class="name flex">
+<span>def <span class="ident">tokenize</span></span>(<span>bios)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Tokenize the bios by removing punctuation and stopwords.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code></dt>
+<dd>The bios to be tokenized.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>A list of words with no punctuation or stopwords.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tokenize(bios) :
+    &#34;&#34;&#34;Tokenize the bios by removing punctuation and stopwords.
+
+    Args:
+        bios (str): The bios to be tokenized.
+
+    Returns:
+        list: A list of words with no punctuation or stopwords.
+    &#34;&#34;&#34;
+    # 1 - remove punctuation
+    tokens = word_tokenize(bios.lower().translate(str.maketrans(&#39;&#39;, &#39;&#39;, string.punctuation)), language=&#39;french&#39;)
+
+    # 2 - Remove the stop word
+    tokens = [token for token in tokens if ((token not in stopwords_en) and (token not in stopwords_fr))]
+
+    return(tokens)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="twitter_profile_predictor.bios_analyzer.bios_analyzer"><code class="flex name class">
+<span>class <span class="ident">bios_analyzer</span></span>
+<span>(</span><span>bios='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class processing a bios string, offering methods to analyze the string as a Twitter(X) bios.</p>
+<p>Initialize the bios_analyzer object.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The bios string to analyze. Defaults to "".</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class bios_analyzer:
+    &#34;&#34;&#34;
+    A class processing a bios string, offering methods to analyze the string as a Twitter(X) bios.
+    &#34;&#34;&#34;
+
+    def __init__(self, bios=&#34;&#34;):
+        &#34;&#34;&#34;
+        Initialize the bios_analyzer object.
+
+        Args:
+            bios (str, optional): The bios string to analyze. Defaults to &#34;&#34;.
+        &#34;&#34;&#34;
+        self.bios = bios
+
+    def tokenize(self, bios=None):
+        &#34;&#34;&#34;
+        Tokenize the bios string by removing punctuation and stopwords.
+
+        Args:
+            bios (str, optional): The bios string to tokenize. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of tokens in the bios string.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.bios = bios
+
+        # 1 - remove punctuation
+        self.tokens = word_tokenize(self.bios.lower().translate(str.maketrans(&#39;&#39;, &#39;&#39;, string.punctuation)), language=&#39;french&#39;)
+        # 2 - Remove the stop words
+        self.tokens = [token for token in self.tokens if ((token not in stopwords_en) and (token not in stopwords_fr))]
+
+        return self.tokens
+
+    def bi_tokenize(self, bios=None):
+        &#34;&#34;&#34;
+        Tokenize the bios string into bi-tokens.
+
+        Args:
+            bios (str, optional): The bios string to tokenize. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of bi-tokens in the bios string.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.bios = bios
+            self.tokenize()
+        elif not hasattr(self, &#39;tokens&#39;):
+            self.tokenize()
+
+        self.bi_tokens = list(nltk.bigrams(self.tokens))
+
+        return self.bi_tokens
+
+    def full_tokenize(self, bios=None):
+        &#34;&#34;&#34;
+        Tokenize the bios string into tokens and bi-tokens.
+
+        Args:
+            bios (str, optional): The bios string to tokenize. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of tokens and bi-tokens in the bios string.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.bios = bios
+            self.tokenize()
+            self.bi_tokenize()
+        if not hasattr(self, &#39;tokens&#39;):
+            self.tokenize()
+        if not hasattr(self, &#39;bi_tokens&#39;):
+            self.bi_tokenize()
+
+        self.full_tokens = self.tokens + self.bi_tokens
+
+        return self.full_tokens
+
+    def get_professions(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of professions declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of professions declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+
+        # Identify professions in tokens
+        self.professions = []
+        for token in self.full_tokens:
+            try:
+                self.professions.append(map_Keywords_to_professions[token])
+            except:
+                pass
+
+        self.professions = list(set(self.professions))
+
+        return self.professions
+
+    def get_prostatus(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of professional statuses declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of professional statuses declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+
+        # Identify statuses in tokens
+        self.prostatus = []
+        for token in self.full_tokens:
+            try:
+                self.prostatus.append(map_Keywords_to_prostatuses[token])
+            except:
+                pass
+
+        self.prostatus = list(set(self.prostatus))
+
+        return self.prostatus
+
+    def get_actorstatuses(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of actor statuses declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of actor statuses declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+
+        # Identify statuses in tokens
+        self.actorstatuses = []
+        for token in self.full_tokens:
+            try:
+                self.actorstatuses.append(map_Keywords_to_actorstatuses[token])
+            except:
+                pass
+
+        self.actorstatuses = list(set(self.actorstatuses))
+        return self.actorstatuses
+
+    def get_groupstatuses(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of group statuses declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of group statuses declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+        # Identify statuses in tokens
+        self.groupstatuses = []
+        for token in self.full_tokens:
+            try:
+                self.groupstatuses.append(map_Keywords_to_groupstatuses[token])
+            except:
+                pass
+
+        self.groupstatuses = list(set(self.groupstatuses))
+        return self.groupstatuses
+
+    def get_universitystatuses(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of university statuses declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of university statuses declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+        # Identify statuses in tokens
+        self.universitystatuses = []
+        for token in self.full_tokens:
+            try:
+                self.universitystatuses.append(map_Keywords_to_universitystatuses[token])
+            except:
+                pass
+
+        self.universitystatuses = list(set(self.universitystatuses))
+        return self.universitystatuses
+
+    def get_allstatuses(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of all statuses declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of all statuses declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+        # Identify statuses in tokens
+        self.allstatuses = []
+        for token in self.full_tokens:
+            try:
+                self.allstatuses.append(map_Keywords_to_allstatuses[token])
+            except:
+                pass
+
+        self.allstatuses = list(set(self.allstatuses))
+        return self.allstatuses
+
+    def get_ages(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of ages declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of ages declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+        # Identify ages in tokens
+        self.ages = []
+        for token in self.full_tokens:
+            try:
+                self.ages.append(map_Keywords_to_ages[token])
+            except:
+                pass
+
+        self.ages = list(set(self.ages))
+        if len(self.ages) &gt; 1:
+            self.ages = []
+
+        return self.ages
+
+    def get_gender(self, bios=None):
+        &#34;&#34;&#34;
+        Return the gender declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The gender declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+        # Identify gender in tokens
+        self.gender = []
+        for token in self.full_tokens:
+            try:
+                self.gender.append(map_Keywords_to_gender[token])
+            except:
+                pass
+
+        self.gender = list(set(self.gender))
+
+        if &#34;Woman&#34; in self.gender:
+            self.gender = [&#34;Woman&#34;]
+
+        return self.gender
+
+    def get_topics(self, bios=None):
+        &#34;&#34;&#34;
+        Return the list of topics declared in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The list of topics declared in the bios.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.full_tokenize(bios=bios)
+        # Build tokens from bios
+        if not(hasattr(self, &#39;full_tokens&#39;)):
+            self.full_tokenize()
+        # Identify topics in tokens
+        self.topics = []
+        for token in self.full_tokens:
+            try:
+                self.topics.append(map_Keywords_to_topics[token])
+            except:
+                pass
+
+        self.topics = list(set(self.topics))
+        return self.topics
+
+    def get_lang(self, bios=None, mainfrench=True):
+        &#34;&#34;&#34;
+        Use 3 different language models to identify the language of the bios by majority vote.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+            mainfrench (bool, optional): If True, it means that French is the expected language and hence only one model out of 3 identifying French will be considered enough. Defaults to True.
+
+        Returns:
+            string: The recognized language standard code (e.g., &#34;en&#34;, &#34;fr&#34;, &#34;sp&#34;).
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.bios = bios
+
+        self.language = lang(self.bios, mainfrench)
+        return self.language
+
+    def get_PCSgroup(self, bios=None):
+        &#34;&#34;&#34;
+        Return the PCS group corresponding to the professions in the bios.
+
+        Args:
+            bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+        Returns:
+            list: The PCS group corresponding to the profession.
+        &#34;&#34;&#34;
+        if bios is not None:
+            self.get_professions(bios=bios)
+        if not(hasattr(self, &#39;professions&#39;)):
+            self.get_professions()
+
+        self.PCSgroup = []
+        for pro in self.professions:
+            self.PCSgroup.append(map_professions_to_PCSgroups[pro])
+        self.PCSgroup = list(set(self.PCSgroup))
+
+        return(self.PCSgroup)
+
+###########################################
+    # Independent functions</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="twitter_profile_predictor.bios_analyzer.bios_analyzer.bi_tokenize"><code class="name flex">
+<span>def <span class="ident">bi_tokenize</span></span>(<span>self, bios=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Tokenize the bios string into bi-tokens.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The bios string to tokenize. If not provided, the bios string provided at initialization will be used.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The list of bi-tokens in the bios string.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def bi_tokenize(self, bios=None):
+    &#34;&#34;&#34;
+    Tokenize the bios string into bi-tokens.
+
+    Args:
+        bios (str, optional): The bios string to tokenize. If not provided, the bios string provided at initialization will be used.
+
+    Returns:
+        list: The list of bi-tokens in the bios string.
+    &#34;&#34;&#34;
+    if bios is not None:
+        self.bios = bios
+        self.tokenize()
+    elif not hasattr(self, &#39;tokens&#39;):
+        self.tokenize()
+
+    self.bi_tokens = list(nltk.bigrams(self.tokens))
+
+    return self.bi_tokens</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.bios_analyzer.full_tokenize"><code class="name flex">
+<span>def <span class="ident">full_tokenize</span></span>(<span>self, bios=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Tokenize the bios string into tokens and bi-tokens.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The bios string to tokenize. If not provided, the bios string provided at initialization will be used.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The list of tokens and bi-tokens in the bios string.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def full_tokenize(self, bios=None):
+    &#34;&#34;&#34;
+    Tokenize the bios string into tokens and bi-tokens.
+
+    Args:
+        bios (str, optional): The bios string to tokenize. If not provided, the bios string provided at initialization will be used.
+
+    Returns:
+        list: The list of tokens and bi-tokens in the bios string.
+    &#34;&#34;&#34;
+    if bios is not None:
+        self.bios = bios
+        self.tokenize()
+        self.bi_tokenize()
+    if not hasattr(self, &#39;tokens&#39;):
+        self.tokenize()
+    if not hasattr(self, &#39;bi_tokens&#39;):
+        self.bi_tokenize()
+
+    self.full_tokens = self.tokens + self.bi_tokens
+
+    return self.full_tokens</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_PCSgroup"><code class="name flex">
+<span>def <span class="ident">get_PCSgroup</span></span>(<span>self, bios=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the PCS group corresponding to the professions in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The bios string to analyze. If not provided, the bios string provided at initialization will be used.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The PCS group corresponding to the profession.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_PCSgroup(self, bios=None):
+    &#34;&#34;&#34;
+    Return the PCS group corresponding to the professions in the bios.
+
+    Args:
+        bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+    Returns:
+        list: The PCS group corresponding to the profession.
+    &#34;&#34;&#34;
+    if bios is not None:
+        self.get_professions(bios=bios)
+    if not(hasattr(self, &#39;professions&#39;)):
+        self.get_professions()
+
+    self.PCSgroup = []
+    for pro in self.professions:
+        self.PCSgroup.append(map_professions_to_PCSgroups[pro])
+    self.PCSgroup = list(set(self.PCSgroup))
+
+    return(self.PCSgroup)</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_actorstatuses"><code class="name flex">
+<span>def <span class="ident">get_actorstatuses</span></span>(<span>self, bios=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of actor statuses declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The bios string to analyze. If not provided, the bios string provided at initialization will be used.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The list of actor statuses declared in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_actorstatuses(self, bios=None):
+    &#34;&#34;&#34;
+    Return the list of actor statuses declared in the bios.
+
+    Args:
+        bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+    Returns:
+        list: The list of actor statuses declared in the bios.
+    &#34;&#34;&#34;
+    if bios is not None:
+        self.full_tokenize(bios=bios)
+    # Build tokens from bios
+    if not(hasattr(self, &#39;full_tokens&#39;)):
+        self.full_tokenize()
+
+    # Identify statuses in tokens
+    self.actorstatuses = []
+    for token in self.full_tokens:
+        try:
+            self.actorstatuses.append(map_Keywords_to_actorstatuses[token])
+        except:
+            pass
+
+    self.actorstatuses = list(set(self.actorstatuses))
+    return self.actorstatuses</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_ages"><code class="name flex">
+<span>def <span class="ident">get_ages</span></span>(<span>self, bios=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of ages declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The bios string to analyze. If not provided, the bios string provided at initialization will be used.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The list of ages declared in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_ages(self, bios=None):
+    &#34;&#34;&#34;
+    Return the list of ages declared in the bios.
+
+    Args:
+        bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+    Returns:
+        list: The list of ages declared in the bios.
+    &#34;&#34;&#34;
+    if bios is not None:
+        self.full_tokenize(bios=bios)
+    # Build tokens from bios
+    if not(hasattr(self, &#39;full_tokens&#39;)):
+        self.full_tokenize()
+    # Identify ages in tokens
+    self.ages = []
+    for token in self.full_tokens:
+        try:
+            self.ages.append(map_Keywords_to_ages[token])
+        except:
+            pass
+
+    self.ages = list(set(self.ages))
+    if len(self.ages) &gt; 1:
+        self.ages = []
+
+    return self.ages</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_allstatuses"><code class="name flex">
+<span>def <span class="ident">get_allstatuses</span></span>(<span>self, bios=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of all statuses declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The bios string to analyze. If not provided, the bios string provided at initialization will be used.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The list of all statuses declared in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_allstatuses(self, bios=None):
+    &#34;&#34;&#34;
+    Return the list of all statuses declared in the bios.
+
+    Args:
+        bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+    Returns:
+        list: The list of all statuses declared in the bios.
+    &#34;&#34;&#34;
+    if bios is not None:
+        self.full_tokenize(bios=bios)
+    # Build tokens from bios
+    if not(hasattr(self, &#39;full_tokens&#39;)):
+        self.full_tokenize()
+    # Identify statuses in tokens
+    self.allstatuses = []
+    for token in self.full_tokens:
+        try:
+            self.allstatuses.append(map_Keywords_to_allstatuses[token])
+        except:
+            pass
+
+    self.allstatuses = list(set(self.allstatuses))
+    return self.allstatuses</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_gender"><code class="name flex">
+<span>def <span class="ident">get_gender</span></span>(<span>self, bios=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the gender declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The bios string to analyze. If not provided, the bios string provided at initialization will be used.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The gender declared in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_gender(self, bios=None):
+    &#34;&#34;&#34;
+    Return the gender declared in the bios.
+
+    Args:
+        bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+    Returns:
+        list: The gender declared in the bios.
+    &#34;&#34;&#34;
+    if bios is not None:
+        self.full_tokenize(bios=bios)
+    # Build tokens from bios
+    if not(hasattr(self, &#39;full_tokens&#39;)):
+        self.full_tokenize()
+    # Identify gender in tokens
+    self.gender = []
+    for token in self.full_tokens:
+        try:
+            self.gender.append(map_Keywords_to_gender[token])
+        except:
+            pass
+
+    self.gender = list(set(self.gender))
+
+    if &#34;Woman&#34; in self.gender:
+        self.gender = [&#34;Woman&#34;]
+
+    return self.gender</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_groupstatuses"><code class="name flex">
+<span>def <span class="ident">get_groupstatuses</span></span>(<span>self, bios=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of group statuses declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The bios string to analyze. If not provided, the bios string provided at initialization will be used.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The list of group statuses declared in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_groupstatuses(self, bios=None):
+    &#34;&#34;&#34;
+    Return the list of group statuses declared in the bios.
+
+    Args:
+        bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+    Returns:
+        list: The list of group statuses declared in the bios.
+    &#34;&#34;&#34;
+    if bios is not None:
+        self.full_tokenize(bios=bios)
+    # Build tokens from bios
+    if not(hasattr(self, &#39;full_tokens&#39;)):
+        self.full_tokenize()
+    # Identify statuses in tokens
+    self.groupstatuses = []
+    for token in self.full_tokens:
+        try:
+            self.groupstatuses.append(map_Keywords_to_groupstatuses[token])
+        except:
+            pass
+
+    self.groupstatuses = list(set(self.groupstatuses))
+    return self.groupstatuses</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_lang"><code class="name flex">
+<span>def <span class="ident">get_lang</span></span>(<span>self, bios=None, mainfrench=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Use 3 different language models to identify the language of the bios by majority vote.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The bios string to analyze. If not provided, the bios string provided at initialization will be used.</dd>
+<dt><strong><code>mainfrench</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, it means that French is the expected language and hence only one model out of 3 identifying French will be considered enough. Defaults to True.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>string</code></dt>
+<dd>The recognized language standard code (e.g., "en", "fr", "sp").</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_lang(self, bios=None, mainfrench=True):
+    &#34;&#34;&#34;
+    Use 3 different language models to identify the language of the bios by majority vote.
+
+    Args:
+        bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+        mainfrench (bool, optional): If True, it means that French is the expected language and hence only one model out of 3 identifying French will be considered enough. Defaults to True.
+
+    Returns:
+        string: The recognized language standard code (e.g., &#34;en&#34;, &#34;fr&#34;, &#34;sp&#34;).
+    &#34;&#34;&#34;
+    if bios is not None:
+        self.bios = bios
+
+    self.language = lang(self.bios, mainfrench)
+    return self.language</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_professions"><code class="name flex">
+<span>def <span class="ident">get_professions</span></span>(<span>self, bios=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of professions declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The bios string to analyze. If not provided, the bios string provided at initialization will be used.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The list of professions declared in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_professions(self, bios=None):
+    &#34;&#34;&#34;
+    Return the list of professions declared in the bios.
+
+    Args:
+        bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+    Returns:
+        list: The list of professions declared in the bios.
+    &#34;&#34;&#34;
+    if bios is not None:
+        self.full_tokenize(bios=bios)
+    # Build tokens from bios
+    if not(hasattr(self, &#39;full_tokens&#39;)):
+        self.full_tokenize()
+
+    # Identify professions in tokens
+    self.professions = []
+    for token in self.full_tokens:
+        try:
+            self.professions.append(map_Keywords_to_professions[token])
+        except:
+            pass
+
+    self.professions = list(set(self.professions))
+
+    return self.professions</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_prostatus"><code class="name flex">
+<span>def <span class="ident">get_prostatus</span></span>(<span>self, bios=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of professional statuses declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The bios string to analyze. If not provided, the bios string provided at initialization will be used.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The list of professional statuses declared in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_prostatus(self, bios=None):
+    &#34;&#34;&#34;
+    Return the list of professional statuses declared in the bios.
+
+    Args:
+        bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+    Returns:
+        list: The list of professional statuses declared in the bios.
+    &#34;&#34;&#34;
+    if bios is not None:
+        self.full_tokenize(bios=bios)
+    # Build tokens from bios
+    if not(hasattr(self, &#39;full_tokens&#39;)):
+        self.full_tokenize()
+
+    # Identify statuses in tokens
+    self.prostatus = []
+    for token in self.full_tokens:
+        try:
+            self.prostatus.append(map_Keywords_to_prostatuses[token])
+        except:
+            pass
+
+    self.prostatus = list(set(self.prostatus))
+
+    return self.prostatus</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_topics"><code class="name flex">
+<span>def <span class="ident">get_topics</span></span>(<span>self, bios=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of topics declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The bios string to analyze. If not provided, the bios string provided at initialization will be used.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The list of topics declared in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_topics(self, bios=None):
+    &#34;&#34;&#34;
+    Return the list of topics declared in the bios.
+
+    Args:
+        bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+    Returns:
+        list: The list of topics declared in the bios.
+    &#34;&#34;&#34;
+    if bios is not None:
+        self.full_tokenize(bios=bios)
+    # Build tokens from bios
+    if not(hasattr(self, &#39;full_tokens&#39;)):
+        self.full_tokenize()
+    # Identify topics in tokens
+    self.topics = []
+    for token in self.full_tokens:
+        try:
+            self.topics.append(map_Keywords_to_topics[token])
+        except:
+            pass
+
+    self.topics = list(set(self.topics))
+    return self.topics</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_universitystatuses"><code class="name flex">
+<span>def <span class="ident">get_universitystatuses</span></span>(<span>self, bios=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the list of university statuses declared in the bios.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The bios string to analyze. If not provided, the bios string provided at initialization will be used.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The list of university statuses declared in the bios.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_universitystatuses(self, bios=None):
+    &#34;&#34;&#34;
+    Return the list of university statuses declared in the bios.
+
+    Args:
+        bios (str, optional): The bios string to analyze. If not provided, the bios string provided at initialization will be used.
+
+    Returns:
+        list: The list of university statuses declared in the bios.
+    &#34;&#34;&#34;
+    if bios is not None:
+        self.full_tokenize(bios=bios)
+    # Build tokens from bios
+    if not(hasattr(self, &#39;full_tokens&#39;)):
+        self.full_tokenize()
+    # Identify statuses in tokens
+    self.universitystatuses = []
+    for token in self.full_tokens:
+        try:
+            self.universitystatuses.append(map_Keywords_to_universitystatuses[token])
+        except:
+            pass
+
+    self.universitystatuses = list(set(self.universitystatuses))
+    return self.universitystatuses</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.bios_analyzer.tokenize"><code class="name flex">
+<span>def <span class="ident">tokenize</span></span>(<span>self, bios=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Tokenize the bios string by removing punctuation and stopwords.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bios</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The bios string to tokenize. If not provided, the bios string provided at initialization will be used.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>The list of tokens in the bios string.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tokenize(self, bios=None):
+    &#34;&#34;&#34;
+    Tokenize the bios string by removing punctuation and stopwords.
+
+    Args:
+        bios (str, optional): The bios string to tokenize. If not provided, the bios string provided at initialization will be used.
+
+    Returns:
+        list: The list of tokens in the bios string.
+    &#34;&#34;&#34;
+    if bios is not None:
+        self.bios = bios
+
+    # 1 - remove punctuation
+    self.tokens = word_tokenize(self.bios.lower().translate(str.maketrans(&#39;&#39;, &#39;&#39;, string.punctuation)), language=&#39;french&#39;)
+    # 2 - Remove the stop words
+    self.tokens = [token for token in self.tokens if ((token not in stopwords_en) and (token not in stopwords_fr))]
+
+    return self.tokens</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer"><code class="flex name class">
+<span>class <span class="ident">df_bios_analyzer</span></span>
+<span>(</span><span>df, description_column)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class for processing a dataframe of bios strings, offering methods to analyze the strings as Twitter bios.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>The dataframe containing the bios strings.</dd>
+<dt><strong><code>description_column</code></strong> :&ensp;<code>str</code></dt>
+<dd>The column name in the dataframe that contains the bios strings.</dd>
+<dt><strong><code>bios_analyzer</code></strong> :&ensp;<code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer">bios_analyzer</a></code></dt>
+<dd>An instance of the bios_analyzer class for analyzing individual bios strings.</dd>
+</dl>
+<p>Initialize the df_bios_analyzer with a dataframe and the name of the column containing the bios strings.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pandas.DataFrame</code></dt>
+<dd>The dataframe containing the bios strings.</dd>
+<dt><strong><code>description_column</code></strong> :&ensp;<code>str</code></dt>
+<dd>The column name in the dataframe that contains the bios strings.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class df_bios_analyzer():
+    &#34;&#34;&#34;
+    A class for processing a dataframe of bios strings, offering methods to analyze the strings as Twitter bios.
+
+    Attributes:
+        df (pandas.DataFrame): The dataframe containing the bios strings.
+        description_column (str): The column name in the dataframe that contains the bios strings.
+        bios_analyzer (bios_analyzer): An instance of the bios_analyzer class for analyzing individual bios strings.
+
+    &#34;&#34;&#34;
+
+    def __init__(self, df, description_column):
+        &#34;&#34;&#34;
+        Initialize the df_bios_analyzer with a dataframe and the name of the column containing the bios strings.
+
+        Args:
+            df (pandas.DataFrame): The dataframe containing the bios strings.
+            description_column (str): The column name in the dataframe that contains the bios strings.
+        &#34;&#34;&#34;
+        self.df = df
+        self.description_column = description_column
+
+    def tokenize(self):
+        &#34;&#34;&#34;
+        Tokenize the bios strings in the dataframe.
+        The results are stored in a new column &#39;tokens&#39;.
+        &#34;&#34;&#34;
+        self.df[&#39;tokens&#39;] = self.df[self.description_column].apply(tokenize)
+
+    def bi_tokenize(self):
+        &#34;&#34;&#34;
+        Perform bi-tokenization on the bios strings in the dataframe.
+        The results are stored in a new column &#39;bi_tokens&#39;.
+        &#34;&#34;&#34;
+        self.df[&#39;bi_tokens&#39;] = self.df[self.description_column].apply(bi_tokenize)
+
+    def full_tokenize(self):
+        &#34;&#34;&#34;
+        Perform full tokenization on the bios strings in the dataframe.
+        The results are stored in a new column &#39;full_tokens&#39;.
+        &#34;&#34;&#34;
+        self.df[&#39;full_tokens&#39;] = self.df[self.description_column].apply(full_tokenize)
+
+    def get_professions(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract professions from the bios strings in the dataframe. If a column of tokens is provided, 
+        it will use these tokens instead of the bios strings.
+        The results are stored in a new column &#39;professions&#39;.
+
+        Args:
+            tokens_column (str, optional): The column name in the dataframe that contains the tokens. Defaults to None.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;professions&#39;] = self.df[tokens_column].apply(lambda x : get_professions(tokens=x))
+        else:
+            self.df[&#39;professions&#39;] = self.df[self.description_column].apply(lambda x : get_professions(bios=x))
+
+
+    def get_prostatus(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract professional statuses from the bios strings in the dataframe.
+        The results are stored in a new column &#39;prostatus&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;prostatus&#39;] = self.df[tokens_column].apply(lambda x : get_prostatus(tokens=x))
+        else:
+            self.df[&#39;prostatus&#39;] = self.df[self.description_column].apply(lambda x : get_prostatus(bios=x))
+
+    def get_actorstatuses(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract actor statuses from the bios strings in the dataframe.
+        The results are stored in a new column &#39;actorstatus&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;actorstatus&#39;] = self.df[tokens_column].apply(lambda x : get_actorstatuses(tokens=x))
+        else:
+            self.df[&#39;actorstatus&#39;] = self.df[self.description_column].apply(lambda x : get_actorstatuses(bios=x))
+
+    def get_groupstatuses(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract group statuses from the bios strings in the dataframe.
+        The results are stored in a new column &#39;groupstatus&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;groupstatus&#39;] = self.df[tokens_column].apply(lambda x : get_groupstatuses(tokens=x))
+        else:
+            self.df[&#39;groupstatus&#39;] = self.df[self.description_column].apply(lambda x : get_groupstatuses(bios=x))
+
+    def get_universitystatuses(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract university statuses from the bios strings in the dataframe.
+        The results are stored in a new column &#39;universitystatus&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;universitystatus&#39;] = self.df[tokens_column].apply(lambda x : get_universitystatuses(tokens=x))
+        else:
+            self.df[&#39;universitystatus&#39;] = self.df[self.description_column].apply(lambda x : get_universitystatuses(bios=x))
+
+    def get_allstatuses(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract all types of statuses from the bios strings in the dataframe.
+        The results are stored in a new column &#39;allstatus&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;allstatus&#39;] = self.df[tokens_column].apply(lambda x : get_allstatuses(tokens=x))
+        else:
+            self.df[&#39;allstatus&#39;] = self.df[self.description_column].apply(lambda x : get_allstatuses(bios=x))
+
+    def get_ages(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract ages from the bios strings in the dataframe.
+        The results are stored in a new column &#39;age&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;age&#39;] = self.df[tokens_column].apply(lambda x : get_ages(tokens=x))
+        else:
+            self.df[&#39;age&#39;] = self.df[self.description_column].apply(lambda x : get_ages(bios=x))
+
+    def get_gender(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract gender from the bios strings in the dataframe.
+        The results are stored in a new column &#39;gender&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;gender&#39;] = self.df[tokens_column].apply(lambda x : get_gender(tokens=x))
+        else:
+            self.df[&#39;gender&#39;] = self.df[self.description_column].apply(lambda x : get_gender(bios=x))
+
+    def get_topics(self, tokens_column=None):
+        &#34;&#34;&#34;
+        Extract topics from the bios strings in the dataframe.
+        The results are stored in a new column &#39;topic&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;topic&#39;] = self.df[tokens_column].apply(lambda x : get_topics(tokens=x))
+        else:
+            self.df[&#39;topic&#39;] = self.df[self.description_column].apply(lambda x : get_topics(bios=x))
+
+    def get_lang(self, mainfrench=True):
+        &#34;&#34;&#34;
+        Determine the language of the bios strings in the dataframe.
+
+        Args:
+            mainfrench (bool, optional): If true it means that French is the expected language and hence only one model on 3 identifying French will be considered enough. Defaults to True.
+
+        The results are stored in a new column &#39;lang&#39;.
+        &#34;&#34;&#34;
+        self.df[&#39;lang&#39;] = self.df[self.description_column].apply(lambda x : lang(text=x, mainfrench=mainfrench))
+
+    def get_PCSgroup(self, tokens_column=None, professions_column=None):
+        &#34;&#34;&#34;
+        Extract the PCS group corresponding to the professions in the bios strings in the dataframe.
+        The results are stored in a new column &#39;PCSgroup&#39;.
+        &#34;&#34;&#34;
+        if tokens_column is not None:
+            self.df[&#39;PCSgroup&#39;] = self.df[tokens_column].apply(lambda x : get_PCSgroup(tokens=x))
+        if professions_column is not None:
+            self.df[&#39;PCSgroup&#39;] = self.df[professions_column].apply(lambda x : get_PCSgroup(profession=x))
+        else:
+            self.df[&#39;PCSgroup&#39;] = self.df[self.description_column].apply(lambda x : get_PCSgroup(bios=x))
+
+    def get_all(self, mainfrench=True):
+        &#34;&#34;&#34;
+        Perform all analyses on the bios strings in the dataframe.
+
+        Args:
+            tokens_column (str, optional): The column name in the dataframe that contains the tokens. Defaults to None.
+            mainfrench (bool, optional): If true it means that French is the expected language and hence only one model on 3 identifying French will be considered enough. Defaults to True.
+        &#34;&#34;&#34;
+        self.tokenize()
+        self.bi_tokenize()
+        self.full_tokenize()
+        tokens_column = &#39;full_tokens&#39;
+        self.get_professions(tokens_column)
+        self.get_prostatus(tokens_column)
+        self.get_actorstatuses(tokens_column)
+        self.get_groupstatuses(tokens_column)
+        self.get_universitystatuses(tokens_column)
+        self.get_allstatuses(tokens_column)
+        self.get_ages(tokens_column)
+        self.get_gender(tokens_column)
+        self.get_topics(tokens_column)
+        self.get_lang(mainfrench=mainfrench)
+
+        return (self.df)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.bi_tokenize"><code class="name flex">
+<span>def <span class="ident">bi_tokenize</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Perform bi-tokenization on the bios strings in the dataframe.
+The results are stored in a new column 'bi_tokens'.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def bi_tokenize(self):
+    &#34;&#34;&#34;
+    Perform bi-tokenization on the bios strings in the dataframe.
+    The results are stored in a new column &#39;bi_tokens&#39;.
+    &#34;&#34;&#34;
+    self.df[&#39;bi_tokens&#39;] = self.df[self.description_column].apply(bi_tokenize)</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.full_tokenize"><code class="name flex">
+<span>def <span class="ident">full_tokenize</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Perform full tokenization on the bios strings in the dataframe.
+The results are stored in a new column 'full_tokens'.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def full_tokenize(self):
+    &#34;&#34;&#34;
+    Perform full tokenization on the bios strings in the dataframe.
+    The results are stored in a new column &#39;full_tokens&#39;.
+    &#34;&#34;&#34;
+    self.df[&#39;full_tokens&#39;] = self.df[self.description_column].apply(full_tokenize)</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_PCSgroup"><code class="name flex">
+<span>def <span class="ident">get_PCSgroup</span></span>(<span>self, tokens_column=None, professions_column=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract the PCS group corresponding to the professions in the bios strings in the dataframe.
+The results are stored in a new column 'PCSgroup'.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_PCSgroup(self, tokens_column=None, professions_column=None):
+    &#34;&#34;&#34;
+    Extract the PCS group corresponding to the professions in the bios strings in the dataframe.
+    The results are stored in a new column &#39;PCSgroup&#39;.
+    &#34;&#34;&#34;
+    if tokens_column is not None:
+        self.df[&#39;PCSgroup&#39;] = self.df[tokens_column].apply(lambda x : get_PCSgroup(tokens=x))
+    if professions_column is not None:
+        self.df[&#39;PCSgroup&#39;] = self.df[professions_column].apply(lambda x : get_PCSgroup(profession=x))
+    else:
+        self.df[&#39;PCSgroup&#39;] = self.df[self.description_column].apply(lambda x : get_PCSgroup(bios=x))</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_actorstatuses"><code class="name flex">
+<span>def <span class="ident">get_actorstatuses</span></span>(<span>self, tokens_column=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract actor statuses from the bios strings in the dataframe.
+The results are stored in a new column 'actorstatus'.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_actorstatuses(self, tokens_column=None):
+    &#34;&#34;&#34;
+    Extract actor statuses from the bios strings in the dataframe.
+    The results are stored in a new column &#39;actorstatus&#39;.
+    &#34;&#34;&#34;
+    if tokens_column is not None:
+        self.df[&#39;actorstatus&#39;] = self.df[tokens_column].apply(lambda x : get_actorstatuses(tokens=x))
+    else:
+        self.df[&#39;actorstatus&#39;] = self.df[self.description_column].apply(lambda x : get_actorstatuses(bios=x))</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_ages"><code class="name flex">
+<span>def <span class="ident">get_ages</span></span>(<span>self, tokens_column=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract ages from the bios strings in the dataframe.
+The results are stored in a new column 'age'.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_ages(self, tokens_column=None):
+    &#34;&#34;&#34;
+    Extract ages from the bios strings in the dataframe.
+    The results are stored in a new column &#39;age&#39;.
+    &#34;&#34;&#34;
+    if tokens_column is not None:
+        self.df[&#39;age&#39;] = self.df[tokens_column].apply(lambda x : get_ages(tokens=x))
+    else:
+        self.df[&#39;age&#39;] = self.df[self.description_column].apply(lambda x : get_ages(bios=x))</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_all"><code class="name flex">
+<span>def <span class="ident">get_all</span></span>(<span>self, mainfrench=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Perform all analyses on the bios strings in the dataframe.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>tokens_column</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The column name in the dataframe that contains the tokens. Defaults to None.</dd>
+<dt><strong><code>mainfrench</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If true it means that French is the expected language and hence only one model on 3 identifying French will be considered enough. Defaults to True.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_all(self, mainfrench=True):
+    &#34;&#34;&#34;
+    Perform all analyses on the bios strings in the dataframe.
+
+    Args:
+        tokens_column (str, optional): The column name in the dataframe that contains the tokens. Defaults to None.
+        mainfrench (bool, optional): If true it means that French is the expected language and hence only one model on 3 identifying French will be considered enough. Defaults to True.
+    &#34;&#34;&#34;
+    self.tokenize()
+    self.bi_tokenize()
+    self.full_tokenize()
+    tokens_column = &#39;full_tokens&#39;
+    self.get_professions(tokens_column)
+    self.get_prostatus(tokens_column)
+    self.get_actorstatuses(tokens_column)
+    self.get_groupstatuses(tokens_column)
+    self.get_universitystatuses(tokens_column)
+    self.get_allstatuses(tokens_column)
+    self.get_ages(tokens_column)
+    self.get_gender(tokens_column)
+    self.get_topics(tokens_column)
+    self.get_lang(mainfrench=mainfrench)
+
+    return (self.df)</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_allstatuses"><code class="name flex">
+<span>def <span class="ident">get_allstatuses</span></span>(<span>self, tokens_column=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract all types of statuses from the bios strings in the dataframe.
+The results are stored in a new column 'allstatus'.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_allstatuses(self, tokens_column=None):
+    &#34;&#34;&#34;
+    Extract all types of statuses from the bios strings in the dataframe.
+    The results are stored in a new column &#39;allstatus&#39;.
+    &#34;&#34;&#34;
+    if tokens_column is not None:
+        self.df[&#39;allstatus&#39;] = self.df[tokens_column].apply(lambda x : get_allstatuses(tokens=x))
+    else:
+        self.df[&#39;allstatus&#39;] = self.df[self.description_column].apply(lambda x : get_allstatuses(bios=x))</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_gender"><code class="name flex">
+<span>def <span class="ident">get_gender</span></span>(<span>self, tokens_column=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract gender from the bios strings in the dataframe.
+The results are stored in a new column 'gender'.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_gender(self, tokens_column=None):
+    &#34;&#34;&#34;
+    Extract gender from the bios strings in the dataframe.
+    The results are stored in a new column &#39;gender&#39;.
+    &#34;&#34;&#34;
+    if tokens_column is not None:
+        self.df[&#39;gender&#39;] = self.df[tokens_column].apply(lambda x : get_gender(tokens=x))
+    else:
+        self.df[&#39;gender&#39;] = self.df[self.description_column].apply(lambda x : get_gender(bios=x))</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_groupstatuses"><code class="name flex">
+<span>def <span class="ident">get_groupstatuses</span></span>(<span>self, tokens_column=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract group statuses from the bios strings in the dataframe.
+The results are stored in a new column 'groupstatus'.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_groupstatuses(self, tokens_column=None):
+    &#34;&#34;&#34;
+    Extract group statuses from the bios strings in the dataframe.
+    The results are stored in a new column &#39;groupstatus&#39;.
+    &#34;&#34;&#34;
+    if tokens_column is not None:
+        self.df[&#39;groupstatus&#39;] = self.df[tokens_column].apply(lambda x : get_groupstatuses(tokens=x))
+    else:
+        self.df[&#39;groupstatus&#39;] = self.df[self.description_column].apply(lambda x : get_groupstatuses(bios=x))</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_lang"><code class="name flex">
+<span>def <span class="ident">get_lang</span></span>(<span>self, mainfrench=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Determine the language of the bios strings in the dataframe.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>mainfrench</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If true it means that French is the expected language and hence only one model on 3 identifying French will be considered enough. Defaults to True.</dd>
+</dl>
+<p>The results are stored in a new column 'lang'.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_lang(self, mainfrench=True):
+    &#34;&#34;&#34;
+    Determine the language of the bios strings in the dataframe.
+
+    Args:
+        mainfrench (bool, optional): If true it means that French is the expected language and hence only one model on 3 identifying French will be considered enough. Defaults to True.
+
+    The results are stored in a new column &#39;lang&#39;.
+    &#34;&#34;&#34;
+    self.df[&#39;lang&#39;] = self.df[self.description_column].apply(lambda x : lang(text=x, mainfrench=mainfrench))</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_professions"><code class="name flex">
+<span>def <span class="ident">get_professions</span></span>(<span>self, tokens_column=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract professions from the bios strings in the dataframe. If a column of tokens is provided,
+it will use these tokens instead of the bios strings.
+The results are stored in a new column 'professions'.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>tokens_column</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The column name in the dataframe that contains the tokens. Defaults to None.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_professions(self, tokens_column=None):
+    &#34;&#34;&#34;
+    Extract professions from the bios strings in the dataframe. If a column of tokens is provided, 
+    it will use these tokens instead of the bios strings.
+    The results are stored in a new column &#39;professions&#39;.
+
+    Args:
+        tokens_column (str, optional): The column name in the dataframe that contains the tokens. Defaults to None.
+    &#34;&#34;&#34;
+    if tokens_column is not None:
+        self.df[&#39;professions&#39;] = self.df[tokens_column].apply(lambda x : get_professions(tokens=x))
+    else:
+        self.df[&#39;professions&#39;] = self.df[self.description_column].apply(lambda x : get_professions(bios=x))</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_prostatus"><code class="name flex">
+<span>def <span class="ident">get_prostatus</span></span>(<span>self, tokens_column=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract professional statuses from the bios strings in the dataframe.
+The results are stored in a new column 'prostatus'.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_prostatus(self, tokens_column=None):
+    &#34;&#34;&#34;
+    Extract professional statuses from the bios strings in the dataframe.
+    The results are stored in a new column &#39;prostatus&#39;.
+    &#34;&#34;&#34;
+    if tokens_column is not None:
+        self.df[&#39;prostatus&#39;] = self.df[tokens_column].apply(lambda x : get_prostatus(tokens=x))
+    else:
+        self.df[&#39;prostatus&#39;] = self.df[self.description_column].apply(lambda x : get_prostatus(bios=x))</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_topics"><code class="name flex">
+<span>def <span class="ident">get_topics</span></span>(<span>self, tokens_column=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract topics from the bios strings in the dataframe.
+The results are stored in a new column 'topic'.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_topics(self, tokens_column=None):
+    &#34;&#34;&#34;
+    Extract topics from the bios strings in the dataframe.
+    The results are stored in a new column &#39;topic&#39;.
+    &#34;&#34;&#34;
+    if tokens_column is not None:
+        self.df[&#39;topic&#39;] = self.df[tokens_column].apply(lambda x : get_topics(tokens=x))
+    else:
+        self.df[&#39;topic&#39;] = self.df[self.description_column].apply(lambda x : get_topics(bios=x))</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_universitystatuses"><code class="name flex">
+<span>def <span class="ident">get_universitystatuses</span></span>(<span>self, tokens_column=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract university statuses from the bios strings in the dataframe.
+The results are stored in a new column 'universitystatus'.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_universitystatuses(self, tokens_column=None):
+    &#34;&#34;&#34;
+    Extract university statuses from the bios strings in the dataframe.
+    The results are stored in a new column &#39;universitystatus&#39;.
+    &#34;&#34;&#34;
+    if tokens_column is not None:
+        self.df[&#39;universitystatus&#39;] = self.df[tokens_column].apply(lambda x : get_universitystatuses(tokens=x))
+    else:
+        self.df[&#39;universitystatus&#39;] = self.df[self.description_column].apply(lambda x : get_universitystatuses(bios=x))</code></pre>
+</details>
+</dd>
+<dt id="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.tokenize"><code class="name flex">
+<span>def <span class="ident">tokenize</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Tokenize the bios strings in the dataframe.
+The results are stored in a new column 'tokens'.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tokenize(self):
+    &#34;&#34;&#34;
+    Tokenize the bios strings in the dataframe.
+    The results are stored in a new column &#39;tokens&#39;.
+    &#34;&#34;&#34;
+    self.df[&#39;tokens&#39;] = self.df[self.description_column].apply(tokenize)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="twitter_profile_predictor" href="index.html">twitter_profile_predictor</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="twitter_profile_predictor.bios_analyzer.bi_tokenize" href="#twitter_profile_predictor.bios_analyzer.bi_tokenize">bi_tokenize</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.detlang" href="#twitter_profile_predictor.bios_analyzer.detlang">detlang</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.detlang_cld" href="#twitter_profile_predictor.bios_analyzer.detlang_cld">detlang_cld</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.detlang_id" href="#twitter_profile_predictor.bios_analyzer.detlang_id">detlang_id</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.full_tokenize" href="#twitter_profile_predictor.bios_analyzer.full_tokenize">full_tokenize</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.get_PCSgroup" href="#twitter_profile_predictor.bios_analyzer.get_PCSgroup">get_PCSgroup</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.get_actorstatuses" href="#twitter_profile_predictor.bios_analyzer.get_actorstatuses">get_actorstatuses</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.get_age_kewords" href="#twitter_profile_predictor.bios_analyzer.get_age_kewords">get_age_kewords</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.get_ages" href="#twitter_profile_predictor.bios_analyzer.get_ages">get_ages</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.get_allstatuses" href="#twitter_profile_predictor.bios_analyzer.get_allstatuses">get_allstatuses</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.get_gender" href="#twitter_profile_predictor.bios_analyzer.get_gender">get_gender</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.get_gender_kewords" href="#twitter_profile_predictor.bios_analyzer.get_gender_kewords">get_gender_kewords</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.get_groupstatuses" href="#twitter_profile_predictor.bios_analyzer.get_groupstatuses">get_groupstatuses</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.get_pro_kewords" href="#twitter_profile_predictor.bios_analyzer.get_pro_kewords">get_pro_kewords</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.get_professions" href="#twitter_profile_predictor.bios_analyzer.get_professions">get_professions</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.get_prostatus" href="#twitter_profile_predictor.bios_analyzer.get_prostatus">get_prostatus</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.get_status_kewords" href="#twitter_profile_predictor.bios_analyzer.get_status_kewords">get_status_kewords</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.get_topic_kewords" href="#twitter_profile_predictor.bios_analyzer.get_topic_kewords">get_topic_kewords</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.get_topics" href="#twitter_profile_predictor.bios_analyzer.get_topics">get_topics</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.get_universitystatuses" href="#twitter_profile_predictor.bios_analyzer.get_universitystatuses">get_universitystatuses</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.lang" href="#twitter_profile_predictor.bios_analyzer.lang">lang</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.listation" href="#twitter_profile_predictor.bios_analyzer.listation">listation</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.load_all_dicts" href="#twitter_profile_predictor.bios_analyzer.load_all_dicts">load_all_dicts</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.process_biwords" href="#twitter_profile_predictor.bios_analyzer.process_biwords">process_biwords</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.tokenize" href="#twitter_profile_predictor.bios_analyzer.tokenize">tokenize</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer">bios_analyzer</a></code></h4>
+<ul class="">
+<li><code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer.bi_tokenize" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer.bi_tokenize">bi_tokenize</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer.full_tokenize" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer.full_tokenize">full_tokenize</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_PCSgroup" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer.get_PCSgroup">get_PCSgroup</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_actorstatuses" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer.get_actorstatuses">get_actorstatuses</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_ages" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer.get_ages">get_ages</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_allstatuses" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer.get_allstatuses">get_allstatuses</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_gender" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer.get_gender">get_gender</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_groupstatuses" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer.get_groupstatuses">get_groupstatuses</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_lang" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer.get_lang">get_lang</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_professions" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer.get_professions">get_professions</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_prostatus" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer.get_prostatus">get_prostatus</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_topics" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer.get_topics">get_topics</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer.get_universitystatuses" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer.get_universitystatuses">get_universitystatuses</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.bios_analyzer.tokenize" href="#twitter_profile_predictor.bios_analyzer.bios_analyzer.tokenize">tokenize</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer">df_bios_analyzer</a></code></h4>
+<ul class="">
+<li><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.bi_tokenize" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer.bi_tokenize">bi_tokenize</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.full_tokenize" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer.full_tokenize">full_tokenize</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_PCSgroup" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_PCSgroup">get_PCSgroup</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_actorstatuses" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_actorstatuses">get_actorstatuses</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_ages" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_ages">get_ages</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_all" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_all">get_all</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_allstatuses" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_allstatuses">get_allstatuses</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_gender" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_gender">get_gender</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_groupstatuses" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_groupstatuses">get_groupstatuses</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_lang" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_lang">get_lang</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_professions" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_professions">get_professions</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_prostatus" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_prostatus">get_prostatus</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_topics" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_topics">get_topics</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_universitystatuses" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer.get_universitystatuses">get_universitystatuses</a></code></li>
+<li><code><a title="twitter_profile_predictor.bios_analyzer.df_bios_analyzer.tokenize" href="#twitter_profile_predictor.bios_analyzer.df_bios_analyzer.tokenize">tokenize</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

@@ -9,4 +9,3 @@ src/twitter_profile_predictor.egg-info/requires.txt
 src/twitter_profile_predictor.egg-info/top_level.txt
 src/twitter_profile_predictor/data/df_words_twitterUsersAnalysis.xlsx
 test/test.py
-test/test_package.py

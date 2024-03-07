@@ -10,15 +10,15 @@ class TestBiosAnalyzer(unittest.TestCase):
 
     def test_full_tokenize(self):
         self.extractor.full_tokenize()
-        self.assertEqual(self.extractor.full_tokens, ['je', 'suis', 'president', 'du', 'monde', 'et', 'journaliste', 'chez', 'sciencespo'])
+        self.assertEqual(self.extractor.full_tokens, ['president', 'monde', 'journaliste', 'chez', 'sciencespo', ('president', 'monde'), ('monde', 'journaliste'), ('journaliste', 'chez'), ('chez', 'sciencespo')])
 
     def test_get_professions(self):
         professions = self.extractor.get_professions()
-        self.assertEqual(professions, ['president', 'journaliste'])
+        self.assertEqual(professions, ['journalist'])
 
     def test_get_statuses(self):
-        statuses = self.extractor.get_statuses()
-        self.assertEqual(statuses, ['monde'])
+        statuses = self.extractor.get_allstatuses()
+        self.assertEqual(statuses, ['president', 'sciencespo'])
 
     def test_get_lang(self):
         lang = self.extractor.get_lang()

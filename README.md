@@ -26,6 +26,10 @@ To install this package run the command:
 pip install --upgrade twitter-profile-predictor
 ```
 
+### WARNING
+
+This package use [cld2-cffi](https://pypi.org/project/cld2-cffi/), you may have problem installing `cld2-cffi` while installing `twitter-profile-predictor`. If it's the case please consider installing `cld2-cffi` in your environment before and then install `twitter-profile-predictor`.
+
 ## Example of use
 
 ```python
@@ -210,7 +214,7 @@ We obtain an age for 2.2% of the users.
 
 ### Code 
 
-You can get the list of statuses and keywords by calling :
+You can get the list of age keywords by calling :
 
 ```python
 tbb.get_age_kewords()
@@ -236,7 +240,7 @@ We obtain a gender for 20.5% of the users (14.5% men, 6% women).
 
 ### Code 
 
-You can get the list of statuses and keywords by calling :
+You can get the list of gender keywords by calling :
 
 ```python
 tbb.get_gender_kewords()
@@ -250,7 +254,7 @@ Here are the identified topics: politics, digital, communication, culture, publi
 
 ### Code 
 
-You can get the list of statuses and keywords by calling :
+You can get the list of topics and keywords by calling :
 
 ```python
 tbb.get_topic_kewords()
