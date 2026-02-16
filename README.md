@@ -10,7 +10,7 @@ This package is designed to predict the characteristics of a Twitter profile bas
 
 Predicted characteristics :
 - language (language model detection)
-- professions
+- occupations
 - declared statuses
 - gender
 - age
@@ -127,9 +127,9 @@ The language returned as string with ISO 639-1 Language Codes (Two-letter codes)
 - Portuguese: "pt"
 - ecc...
 
-## Profession
+## Occupation
 
-Estimating Twitter users' occupation from profile information is a common task in computational social sciences, particularly in attempts to assess socioeconomic status (SES) [@ghazouaniAssessingSocioeconomicStatus2019]. SES is considered a set of material, cultural, and social capital, clearly related to the profession.
+Estimating Twitter users' occupation from profile information is a common task in computational social sciences, particularly in attempts to assess socioeconomic status (SES) [@ghazouaniAssessingSocioeconomicStatus2019]. SES is considered a set of material, cultural, and social capital, which is most of the times related to the occupation.
 
 The easiest way to estimate users' occupation is to use the auto-declared occupation in the user's profile description. According to [@preotiuc-pietroAnalysisUserOccupational2015], 20% of active users declare their occupational status in their description.
 
@@ -172,7 +172,7 @@ Because our dataset is 80% French, we choose to analyze the professions collecte
 | Professors and higher scientific professions        | Professeurs et professions scientifiques supérieures (3400) | 636   | Professor, historian...         |
 | Other                                              | Recognized professions in other CSP categories            | 530   | Nurse, architect...             |
 
-[^1]: For example, "Engineer and gardener on the weekend." Is that an engineer or a hunter? "Actor, producer, film director, and writer." What is the main profession?
+[^1]: For example, "Engineer and gardener on the weekend." Is that an engineer or a gardener? "Actor, producer, film director, and writer." What is the main occupation? Are there all occupations ?
 
 [^2]: For instance, we notice that plural occupation keywords (e.g., "parliamentarians") most often don't refer to auto-declaration of profession.
 
