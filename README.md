@@ -139,7 +139,7 @@ There are four main difficulties in this task for assessing SES [@sloanWhoTweets
 
 1. Distinguishing main occupations among hobbies or secondary occupations[^1].
 2. Accessing representativity on Twitter among different classes.
-3. Ensuring that the use of given professional keywords is actually auto-declarative.
+3. Ensuring that the use of given professional keyword is actually auto-declarative.
 4. Wrong and/or biased auto-declared professions.
 
 We tackle these problems by replacing automatic detection of profession with human-annotated professions, focusing mainly on the most common declared occupations.
