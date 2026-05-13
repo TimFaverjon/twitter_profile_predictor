@@ -1,8 +1,15 @@
+# Ignore the data directory
 src/twitter_profile_predictor/data
 
+# Ignore all build directories except for the one in docs
 build
 !/docs/build/
 
+# Ignore all dist directories
 dist
 
+# Packaging steps tutorial
 packaging_steps_tutorial.md
+
+# Ignore all pycache directories and files
+__pycache__/*
