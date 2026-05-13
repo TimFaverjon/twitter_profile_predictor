@@ -13,4 +13,4 @@ packaging_steps_tutorial.md
 
 # Ignore all pycache directories and files
 __pycache__*
-src/twitter_profile_predictor/__pycache__
+src/twitter_profile_predictor/__pycache__*
