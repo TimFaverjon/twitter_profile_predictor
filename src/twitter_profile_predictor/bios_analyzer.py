@@ -7,10 +7,13 @@
 ######################
 
 import nltk
-import cld2
 import langdetect
 langdetect.DetectorFactory.seed = 0
 import langid
+try:
+    import pycld3
+except ImportError:
+    pycld3 = None
 
 # Define language recognition models
 def detlang(text):
@@ -43,9 +46,9 @@ def detlang_id(text):
     except:
         return 0
 
-def detlang_cld(text):
+def detlang_pycld3(text):
     """
-    Detect the language of the given text using the cld2 library.
+    Detect the language of the given text using the pycld3 library. WARNING : because pycld3 is not available anymore, this function will return 0 for all bios if pycld3 is not already installed.
 
     Args:
         text (str): The text to detect the language of.
@@ -53,15 +56,12 @@ def detlang_cld(text):
     Returns:
         str: The detected language code.
     """
-    try:
-        results = cld2.detect(text)
-        if results.is_reliable:
-            # Extract language code
-            return results.details[0].language_code
-        else:
+    if pycld3 is not None:
+        try:
+            return pycld3.get_language(text).language
+        except:
             return 0
-    except:
-        return 0
+    return 0
 
 def lang(text, mainfrench=True):
     """
@@ -76,17 +76,17 @@ def lang(text, mainfrench=True):
     """
     langdet = detlang(text)
     langid = detlang_id(text)
-    langcld = detlang_cld(text)
+    langcld = detlang_pycld3(text)
 
     if mainfrench:
         if langdet == 'fr' or langid == 'fr' or langcld == 'fr':
             return 'fr'  # WARNING: favor French because of prior of Twitter corpus
 
-    if langdet == langid:
+    if langdet == langid and langdet != 0:
         return langdet
-    elif langdet == langcld:
+    elif langdet == langcld and langdet != 0:
         return langdet
-    elif langid == langcld:
+    elif langid == langcld and langid != 0:
         return langid
     else:
         return False

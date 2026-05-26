@@ -36,7 +36,7 @@ The package is uploaded on [PyPI](https://pypi.org/project/twitter-profile-predi
 
 ### WARNING
 
-This package use [cld2-cffi](https://pypi.org/project/cld2-cffi/), you may have problem installing `cld2-cffi` while installing `twitter-profile-predictor`. If it's the case please consider installing `cld2-cffi` in your environment before and then install `twitter-profile-predictor`.
+This package can use [pycld3](https://pypi.org/project/pycld3/) as the third language detector. If `pycld3` is not available in your environment, the code falls back to the two other detectors already included in the project.
 
 ## Example of use
 
@@ -73,7 +73,7 @@ Giving the difficulty of the task on very small texts we use 3 different
 available python language detector :
 [`langid.classify`](https://github.com/saffsd/langid.py/blob/master/README.rst),
 [`langdetect.detect`](https://pypi.org/project/langdetect/) and
-[`cld3.get_language`](https://github.com/google/cld3), and we then get
+[`pycld3.get_language`](https://pypi.org/project/pycld3/), and we then get
 the right language by majority vote or return `False` if no language
 matches with another.
 

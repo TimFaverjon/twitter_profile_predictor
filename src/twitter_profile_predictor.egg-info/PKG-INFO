@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
-Name: twitter_profile_predictor
-Version: 0.2.2
+Name: twitter-profile-predictor
+Version: 0.2.3
 Summary: A python module that extract information (language, profession...) from X[ex-Twitter] profile bios
 Home-page: https://github.com/TimFaverjon/twitter_profile_predictor
 Author: Tim Faverjon
@@ -12,9 +12,12 @@ Requires-Dist: asttokens>=2.0.5
 Requires-Dist: openpyxl>=3.0.10
 Requires-Dist: langdetect>=1.0.9
 Requires-Dist: langid>=1.1.6
-Requires-Dist: cld2-cffi>=0.1.4
 
 # Twitter Profile Predictor
+
+WELCOME to Twitter profile predictor, a quick and easy way to estimate professions, statuses, topics and other features of Twitter users from their description in an auditable way. And suitable for FRENCH !
+
+For any question contact : tim.faverjon@sciencespo.fr.
 
 ## Description
 
@@ -22,17 +25,19 @@ This package is designed to predict the characteristics of a Twitter profile bas
 
 Predicted characteristics :
 - language (language model detection)
-- professions
+- occupations
 - declared statuses
 - gender
 - age
 - topics
 
+Detailed documentation can be found [here](https://timfaverjon.github.io/twitter_profile_predictor/bios_analyzer.html).
+
 ### Methodology
 
 Language is identified using language models.
 
-All the other characteristics are estimated by identifying keywords and bi-words in the bios.
+All the other characteristics are estimated by identifying keywords and bi-words in the bios. The keywords have been choosen by human annotation among the most used words and bi-words in a sample of French Twitter users (see more detail in the documentation section). 
 
 ## Installation
 
@@ -42,9 +47,11 @@ To install this package run the command:
 pip install --upgrade twitter-profile-predictor
 ```
 
+The package is uploaded on [PyPI](https://pypi.org/project/twitter-profile-predictor/).
+
 ### WARNING
 
-This package use [cld2-cffi](https://pypi.org/project/cld2-cffi/), you may have problem installing `cld2-cffi` while installing `twitter-profile-predictor`. If it's the case please consider installing `cld2-cffi` in your environment before and then install `twitter-profile-predictor`.
+This package can use [pycld3](https://pypi.org/project/pycld3/) as the third language detector. If `pycld3` is not available in your environment, the code falls back to the two other detectors already included in the project.
 
 ## Example of use
 
@@ -66,9 +73,11 @@ print("profession extraction")
 print(extractor.get_professions())
 ```
 
-You can find a tutorial with examples [here](test/example_code.ipynb).
+You can find a [tutorial with examples](test/example_code.ipynb).
 
 # Documentation
+
+ In this section we discuss the scientific methodology. Detailed and complete documentation of the functions and classes can be found [here](https://timfaverjon.github.io/twitter_profile_predictor/bios_analyzer.html).
 
 Our methodology is based on the analyisis of X (ex-Twitter) bios (also called description). Around 48% of all X users have a bios accessible on their profile[@culottaPredictingTwitterUser2016]. Our method have been developped on a specific subset of 30.000 users followers of french members of parliament. For this reason we recommended it for french datasets
 
@@ -79,7 +88,7 @@ Giving the difficulty of the task on very small texts we use 3 different
 available python language detector :
 [`langid.classify`](https://github.com/saffsd/langid.py/blob/master/README.rst),
 [`langdetect.detect`](https://pypi.org/project/langdetect/) and
-[`cld3.get_language`](https://github.com/google/cld3), and we then get
+[`pycld3.get_language`](https://pypi.org/project/pycld3/), and we then get
 the right language by majority vote or return `False` if no language
 matches with another.
 
@@ -133,9 +142,9 @@ The language returned as string with ISO 639-1 Language Codes (Two-letter codes)
 - Portuguese: "pt"
 - ecc...
 
-## Profession
+## Occupation
 
-Estimating Twitter users' occupation from profile information is a common task in computational social sciences, particularly in attempts to assess socioeconomic status (SES) [@ghazouaniAssessingSocioeconomicStatus2019]. SES is considered a set of material, cultural, and social capital, clearly related to the profession.
+Estimating Twitter users' occupation from profile information is a common task in computational social sciences, particularly in attempts to assess socioeconomic status (SES) [@ghazouaniAssessingSocioeconomicStatus2019]. SES is considered a set of material, cultural, and social capital, which is most of the times related to the occupation.
 
 The easiest way to estimate users' occupation is to use the auto-declared occupation in the user's profile description. According to [@preotiuc-pietroAnalysisUserOccupational2015], 20% of active users declare their occupational status in their description.
 
@@ -145,7 +154,7 @@ There are four main difficulties in this task for assessing SES [@sloanWhoTweets
 
 1. Distinguishing main occupations among hobbies or secondary occupations[^1].
 2. Accessing representativity on Twitter among different classes.
-3. Ensuring that the use of given professional keywords is actually auto-declarative.
+3. Ensuring that the use of given professional keyword is actually auto-declarative.
 4. Wrong and/or biased auto-declared professions.
 
 We tackle these problems by replacing automatic detection of profession with human-annotated professions, focusing mainly on the most common declared occupations.
@@ -178,7 +187,7 @@ Because our dataset is 80% French, we choose to analyze the professions collecte
 | Professors and higher scientific professions        | Professeurs et professions scientifiques supérieures (3400) | 636   | Professor, historian...         |
 | Other                                              | Recognized professions in other CSP categories            | 530   | Nurse, architect...             |
 
-[^1]: For example, "Engineer and gardener on the weekend." Is that an engineer or a hunter? "Actor, producer, film director, and writer." What is the main profession?
+[^1]: For example, "Engineer and gardener on the weekend." Is that an engineer or a gardener? "Actor, producer, film director, and writer." What is the main occupation? Are there all occupations ?
 
 [^2]: For instance, we notice that plural occupation keywords (e.g., "parliamentarians") most often don't refer to auto-declaration of profession.
 
